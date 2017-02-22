@@ -1,0 +1,33 @@
+\newcommand{\noopsort}[1]{} \newcommand{\printfirst}[2]{#1}
+  \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}
+\begin{thebibliography}{1}
+
+\bibitem{bash}
+bash.
+\newblock \url{https://www.gnu.org/software/bash/}.
+
+\bibitem{phylogenetics}
+biological dictionary.
+\newblock \url{http://www.biology-online.org/dictionary/Phylogenetics}.
+
+\bibitem{phylogenetic_tree}
+phylogenetic tree.
+\newblock \url{http://www.biology-online.org/dictionary/Phylogeny}.
+
+\bibitem{sondovac}
+sondovac.
+\newblock \url{https://github.com/V-Z/sondovac/}.
+
+\bibitem{schatz2012current}
+Michael~C Schatz, Jan Witkowski, and W~Richard McCombie.
+\newblock Current challenges in de novo plant genome sequencing and assembly.
+\newblock {\em Genome biology}, 13(4):243, 2012.
+
+\bibitem{weitemier2014hyb}
+Kevin Weitemier, Shannon~CK Straub, Richard~C Cronn, Mark Fishbein, Roswitha
+  Schmickl, Angela McDonnell, and Aaron Liston.
+\newblock Hyb-seq: Combining target enrichment and genome skimming for plant
+  phylogenomics.
+\newblock {\em Applications in Plant Sciences}, 2(9):1400042, 2014.
+
+\end{thebibliography}

@@ -1,0 +1,97 @@
+\chapter[Existing work - Sondovac]{Existing work - Sondovac}
+\label{kap:existing_work}
+
+In this chapter, we will take a closer look at the pipeline and the workflow of Sondovac. We 
+will also specify the input and output data format and consider them from the informatic and 
+more formal point of view. Finally, detailed description of the tools and software that are used by 
+Sondovac will be listed. 
+
+Sondovac is an interactive and automated script to create orthologous low-copy nuclear 
+probes for furthere use by the Hyb-Seq protocol. It uses transcriptome and genome skim data. 
+Sondovac doesn't require strong bioinformatic skills nor high-performance computer. It is 
+intended for either Linux or Mac OS X. 
+
+
+
+\section{Sondovac origins}
+
+Sondovac is a Czech neologism standing for "Probe-maker". 
+
+\section{The pipeline}
+
+Sondovac is written in BASH, an Unix shell and a command language \cite{bash}. It has three 
+parts: sondovac\_part\_a.sh, the geneious intermediate part and sondovac\_part\_b.sh. Between 
+the parts a and b of Sondovac it's necessary to manualy input the output from the part a into 
+another software - Geneious, for data processing and then run the part b on the output from the software. 
+
+\subsection{Sondovac part a}%Don't forget we already know here what type of data we have
+
+The part a of the script covers 6 steps: 
+
+\begin{enumerate}
+\item Removing the transcripts that share $\geq$ 90\% sequence similarity
+
+\item Removing the reads of plastid origin
+
+\item Removing the reads of mitochondrial origin
+
+\item Combining the paired-end reads
+
+\item Matching the the unique transcripts and the filtered, combined genome skim reads sharing $\geq$ 85\% sequence similarity
+
+\item Filtering the BLAT output
+\begin{enumerate}
+\item Choosing the transcript or genome skim sequences for further processing
+\item Removing the transcripts with more than 1000 BLAT hits
+\item Removing the transcript or genome skim BLAT hits containing masked nucleotides
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection{Geneious}
+
+\subsection{Sondovac part b}
+Sondovac part b covers 4 steps:
+  
+\begin{enumerate}
+\item Retention of those contigs that comprise exons $\geq$ bait length and have a certain total locus length
+\item Removal of probe sequences sharing $\geq$90\% sequence similarity
+\item Retention of those contigs that comprise exons $\geq$ bait length and have a certain total locus length
+\item Removal of probe sequences sharing $\geq$90\% sequence similarity with the plastome reference
+\end{enumerate}
+
+\section{Input and output data}
+
+\subsection{Input data for part a}
+Input data for part a of Sondovac consist of 5 file, 1 of them being optional. 
+\begin{enumerate}
+\item Transcriptome input file in FASTA format
+The file consists of several blocks with same format: On the first line of a block there is a '>' character followed 
+with a unique description of the sequence, in this case a number. On the next few lines, there is the actual sequence 
+composed of 'A', 'C', 'G' or 'T' characters. 
+\item Plastome reference sequence input file in FASTA format
+This file is used in both parts. It consists of a single long sequence and the starting line with '>' and the sequence's 
+unique description. 
+\item Mitochondriome reference sequence input file in FASTA format (Optional)
+The file contains a single sequence along with the first line describing it. It's optional, because the size of a plant
+mitochondrial genome can vary greatly and have high rearrangement rates. 
+\item Paired-end genome skim input file in FASTQ format (first file)
+\item Paired-end genome skim input file in FASTQ format (second file)
+\end{enumerate}
+\subsection{Output data}
+
+\subsection{Input data for part b}
+\begin{enumerate}
+\item Input file in TSV format (output of Geneious assembly)
+\item Input file in FASTA format (output of Geneious assembly)
+\item Plastome reference sequence input file in FASTA format
+This file is used in both parts. It consists of a single long sequence and the starting line with '>' and the sequence's 
+unique description. 
+\end{enumerate}
+\subsection{Output data}
+
+\section{Use of Sondovac}
+Here we will write about how to use Sondovac, what modes does it run and what flags or settings can be used. 
+\section{Used software and tools}
+
+\subsection{BASH}
