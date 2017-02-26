@@ -2,10 +2,10 @@
 
 
 input_file_name = "output_target_enrichment_probe_sequences.fasta"
-#input_file_name = "test_data.fasta"
 new_file_name = "selected_" + input_file_name
 target_number_of_bases = 1000000
 switch_to_knapsack_after = 990000
+#input_file_name = "test_data.fasta"
 #target_number_of_bases = 10
 #switch_to_knapsack_after = 5 
 
@@ -15,27 +15,22 @@ name_sequence = {}
 length_name = []
 
 for line in input_file:
-#	print line
 	if line[0] == '>':
 		name = line
 		sequence = next(input_file)
 		length = (len(sequence) - 1)
-#		print (name, length)
 		name_sequence[name] = sequence
 		length_name.append( (length, name) )
-#	raw_input("Press enter to continue...")
 
 length_name.sort(reverse=True)
-#print (length_name[0], length_name[2])
 
 number_of_bases = 0
 output_file = open(new_file_name, "w+")
 i = 0
 while number_of_bases < switch_to_knapsack_after and i < len(length_name):
-#	print (number_of_bases, switch_to_knapsack_after, i, len(length_name))
-#	print (i)
 	name = length_name[i][1]
 	length = length_name[i][0]
+#if we go greedy till the end, we use this part
 #	if (number_of_bases + length) > switch_to_knapsack_after:
 #		print length
 #		i += 1
@@ -44,36 +39,33 @@ while number_of_bases < switch_to_knapsack_after and i < len(length_name):
 	number_of_bases += length
 	output_file.write( (str(name) + str(name_sequence[name])));
 	i += 1
-#	raw_input("Press enter to continue...")
-print (str("So far selected: " + str(number_of_bases) + " bases"))
 
 bases_to_fill = target_number_of_bases - number_of_bases
+print (str("So far selected: " + str(number_of_bases) + " bases"))
 print (str("Bases to fill: " + str(bases_to_fill)))
-sequences_left = len(length_name) - i
 
+sequences_left = len(length_name) - i
 sums = [-1] * (bases_to_fill + 1)
-#print (len(sums))
 sums[0] = 0
 
-print (len(length_name), i)
-
-#for each sequence 
+#for each sequence length find out, what sums can we make with it
 for sequence_id in range(i, len(length_name)):
-#	print ("sequence_id: ", sequence_id)
+#	for each sum, find out what sums can we make with it and the sequence
 	for sum_id in range(len(sums)-1, -1, -1):
-#		print ("sum: ", sum_id)
+#		if we can achieve the particular sum
 		if sums[sum_id] != -1:
+#			if we didn't already make the new sum we are trying to make now
 			if sum_id + length_name[sequence_id][0] < len(sums) and sums[sum_id + length_name[sequence_id][0]] == -1:
 				sums[sum_id + length_name[sequence_id][0]] = sequence_id
 
-print (sums)
-#finds the last achieved sum
+#print (sums)
+
+#finds the biggest achieved sum
 last_achieved_sum = 0
 for sum_id in range(bases_to_fill, -1, -1):
 	if sums[sum_id] != -1:
 		last_achieved_sum = sum_id
 		break
-print last_achieved_sum
 bases_filled = 0
 #traces back to see which sequences to print
 while last_achieved_sum > 0:
