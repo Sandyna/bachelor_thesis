@@ -6,22 +6,19 @@ will also specify the input and output data format and consider them from the in
 more formal point of view. Finally, detailed description of the tools and software that are used by 
 Sondovac will be listed. 
 
-Sondovac is an interactive and automated script to create orthologous low-copy nuclear 
-probes for furthere use by the Hyb-Seq protocol. It uses transcriptome and genome skim data. 
-Sondovac doesn't require strong bioinformatic skills nor high-performance computer. It is 
-intended for either Linux or Mac OS X. 
-
-
-
 \section{Sondovac origins}
 
-Sondovac is a Czech neologism standing for "Probe-maker". 
+Sondovac is a Czech neologism standing for "Probe-maker". It was created by Roswitha Smickl. 
+Sondovac is an interactive and automated script to create orthologous low-copy nuclear 
+probes for further use by the Hyb-Seq protocol. It uses transcriptome and genome skim data. 
+Sondovac does not require strong bioinformatic skills nor high-performance computer. It is 
+intended for either Linux or Mac OS X. 
 
 \section{The pipeline}
 
 Sondovac is written in BASH, an Unix shell and a command language \cite{bash}. It has three 
-parts: sondovac\_part\_a.sh, the geneious intermediate part and sondovac\_part\_b.sh. Between 
-the parts a and b of Sondovac it's necessary to manualy input the output from the part a into 
+parts: sondovac\_part\_a.sh, the geneious \cite{geneious} intermediate part and sondovac\_part\_b.sh. Between 
+the parts a and b of Sondovac it is necessary to manualy input the output from the part a into 
 another software - Geneious, for data processing and then run the part b on the output from the software. 
 
 \subsection{Sondovac part a}%Don't forget we already know here what type of data we have
@@ -54,10 +51,10 @@ The part a of the script covers 6 steps:
 Sondovac part b covers 4 steps:
   
 \begin{enumerate}
-\item Retention of those contigs that comprise exons $\geq$ bait length and have a certain total locus length
-\item Removal of probe sequences sharing $\geq$90\% sequence similarity
-\item Retention of those contigs that comprise exons $\geq$ bait length and have a certain total locus length
-\item Removal of probe sequences sharing $\geq$90\% sequence similarity with the plastome reference
+\item Retention of those contigs that comprise exons greater or equal than bait length and have a certain total locus length
+\item Removal of probe sequences sharing greater or equal than 90\% sequence similarity
+\item Retention of those contigs that comprise exons greater or equal than bait length and have a certain total locus length
+\item Removal of probe sequences sharing greater or equal than 90\% sequence similarity with the plastome reference
 \end{enumerate}
 
 \section{Input and output data}
@@ -73,7 +70,7 @@ composed of 'A', 'C', 'G' or 'T' characters.
 This file is used in both parts. It consists of a single long sequence and the starting line with '>' and the sequence's 
 unique description. 
 \item Mitochondriome reference sequence input file in FASTA format (Optional)
-The file contains a single sequence along with the first line describing it. It's optional, because the size of a plant
+The file contains a single sequence along with the first line describing it. It is optional, because the size of a plant
 mitochondrial genome can vary greatly and have high rearrangement rates. 
 \item Paired-end genome skim input file in FASTQ format (first file)
 \item Paired-end genome skim input file in FASTQ format (second file)
@@ -94,4 +91,32 @@ unique description.
 Here we will write about how to use Sondovac, what modes does it run and what flags or settings can be used. 
 \section{Used software and tools}
 
-\subsection{BASH}
+Sondovac uses a broad variety of tools and scientific software packages, both freeware and payware. It is mainly coded in BASH, but it also uses smaller python 
+scripts. We will take a closer look at what each of the tools is and what does it do in the Sondovac script. 
+
+\subsection{Programming languages}
+\begin{enumerate}
+\item BASH
+\item Python
+\end{enumerate}
+
+\subsection{Tools and software}
+
+This is just structure, there will be more about each of these tools. 
+
+\begin{enumerate}
+\item Bam2fastq
+\item BLAT
+\item Bowtie2
+\item CD-HIT
+\item FASTX toolkit
+\item FLASH
+\item Geneious
+\item Htsjdk
+%I'm pretty sure they just hit random keys and then came up with a clever meaning for this one
+\item Libgtextutils
+\item Picard
+\item SAMtools
+%What do they mean by basic Unix tools? Check this
+\end{enumerate}
+

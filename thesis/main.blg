@@ -3,49 +3,47 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: literatura.bib
-Warning--to sort, need author or key in phylogenetics
-Warning--to sort, need author or key in phylogenetic_tree
-Warning--to sort, need author or key in sondovac
-Warning--to sort, need author or key in bash
-You've used 6 entries,
+Warning--to sort, need author or key in geneious
+Warning--to sort, need author or key in mycroarray
+You've used 8 entries,
             2118 wiz_defined-function locations,
-            524 strings with 4859 characters,
-and the built_in function-call counts, 1440 in all, are:
-= -- 126
-> -- 60
+            535 strings with 5028 characters,
+and the built_in function-call counts, 1934 in all, are:
+= -- 170
+> -- 86
 < -- 0
-+ -- 26
-- -- 20
-* -- 94
-:= -- 213
-add.period$ -- 14
-call.type$ -- 6
-change.case$ -- 28
++ -- 36
+- -- 28
+* -- 104
+:= -- 313
+add.period$ -- 22
+call.type$ -- 8
+change.case$ -- 38
 chr.to.int$ -- 0
 cite$ -- 10
-duplicate$ -- 50
-empty$ -- 143
-format.name$ -- 20
-if$ -- 311
+duplicate$ -- 64
+empty$ -- 185
+format.name$ -- 28
+if$ -- 409
 int.to.chr$ -- 0
-int.to.str$ -- 6
+int.to.str$ -- 8
 missing$ -- 2
-newline$ -- 30
-num.names$ -- 4
-pop$ -- 56
+newline$ -- 42
+num.names$ -- 12
+pop$ -- 78
 preamble$ -- 2
-purify$ -- 22
+purify$ -- 30
 quote$ -- 0
-skip$ -- 37
+skip$ -- 49
 stack$ -- 0
-substring$ -- 60
-swap$ -- 6
+substring$ -- 70
+swap$ -- 8
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
-warning$ -- 4
-while$ -- 6
-width$ -- 7
-write$ -- 53
-(There were 4 warnings)
+type$ -- 32
+warning$ -- 2
+while$ -- 14
+width$ -- 9
+write$ -- 75
+(There were 2 warnings)

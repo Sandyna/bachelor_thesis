@@ -2,26 +2,38 @@
   \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}
 \begin{thebibliography}{1}
 
+\bibitem{geneious}
+Geneious.
+\newblock \url{http://www.geneious.com/}.
+
+\bibitem{mycroarray}
+Mycroarray.
+\newblock \url{http://www.mycroarray.com/}.
+
 \bibitem{bash}
-bash.
+Free~Software Foundation.
+\newblock Bash.
 \newblock \url{https://www.gnu.org/software/bash/}.
 
 \bibitem{phylogenetics}
-biological dictionary.
+Colective of~authors.
+\newblock Biological dictionary.
 \newblock \url{http://www.biology-online.org/dictionary/Phylogenetics}.
 
 \bibitem{phylogenetic_tree}
-phylogenetic tree.
+Colective of~authors.
+\newblock Phylogenetic tree.
 \newblock \url{http://www.biology-online.org/dictionary/Phylogeny}.
-
-\bibitem{sondovac}
-sondovac.
-\newblock \url{https://github.com/V-Z/sondovac/}.
 
 \bibitem{schatz2012current}
 Michael~C Schatz, Jan Witkowski, and W~Richard McCombie.
 \newblock Current challenges in de novo plant genome sequencing and assembly.
 \newblock {\em Genome biology}, 13(4):243, 2012.
+
+\bibitem{sondovac}
+Roswitha Smickl.
+\newblock Sondovac.
+\newblock \url{https://github.com/V-Z/sondovac/}.
 
 \bibitem{weitemier2014hyb}
 Kevin Weitemier, Shannon~CK Straub, Richard~C Cronn, Mark Fishbein, Roswitha
