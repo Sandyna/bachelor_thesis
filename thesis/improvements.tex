@@ -24,9 +24,22 @@ We want to create a script, that would work with the second part of sondovac and
 sequences to fill up the limit. This script would take into account any sequences we want to keep, or those we do not want in 
 the result. 
 
+\subsection{Additional requirements}
+We need specific genes - responsible for nickel and metal binding. If these genes are present among our sequences, they have 
+to be in the result. We will take the largest output file from sondovac\_part\_b: the one with the lowest minimum total locus length. 
+From this file, we will select the required genes. The rest will be chosen by a combination of greedy algorithm and a knapsack. 
+
+\subsubsection{Nickel and metal binding genes}
+
+\subsubsection{Input data}
+
+\subsubsection{About aligning}
+We used bowtie2 for aligning the genes to our results. 
+
 \subsection{Input and output}
 
 \subsection{binary search}
+We will not use this. 
 
 \section{Maximalization of space}
 

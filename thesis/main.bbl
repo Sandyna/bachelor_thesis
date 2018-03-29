@@ -1,6 +1,9 @@
 \newcommand{\noopsort}[1]{} \newcommand{\printfirst}[2]{#1}
   \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{bowtie2}
+Bowtie2), note={\url{http://bowtie-bio.sourceforge.net/bowtie2/index.shtml}},.
 
 \bibitem{geneious}
 Geneious.
@@ -24,6 +27,12 @@ Colective of~authors.
 Colective of~authors.
 \newblock Phylogenetic tree.
 \newblock \url{http://www.biology-online.org/dictionary/Phylogeny}.
+
+\bibitem{sang2002utility}
+Tao Sang.
+\newblock Utility of low-copy nuclear gene sequences in plant phylogenetics.
+\newblock {\em Critical Reviews in Biochemistry and Molecular Biology},
+  37(3):121--147, 2002.
 
 \bibitem{schatz2012current}
 Michael~C Schatz, Jan Witkowski, and W~Richard McCombie.
