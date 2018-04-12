@@ -2,16 +2,28 @@
   \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}
 \begin{thebibliography}{10}
 
-\bibitem{bowtie2}
-Bowtie2), note={\url{http://bowtie-bio.sourceforge.net/bowtie2/index.shtml}},.
-
 \bibitem{geneious}
-Geneious.
-\newblock \url{http://www.geneious.com/}.
+
+
+\bibitem{bowtie2}
+
 
 \bibitem{mycroarray}
-Mycroarray.
-\newblock \url{http://www.mycroarray.com/}.
+
+
+\bibitem{anand2016next}
+Santosh Anand, Eleonora Mangano, Nadia Barizzone, Roberta Bordoni, Melissa
+  Sorosina, Ferdinando Clarelli, Lucia Corrado, Filippo~Martinelli Boneschi,
+  Sandra D’Alfonso, and Gianluca De~Bellis.
+\newblock Next generation sequencing of pooled samples: guideline for
+  variants’ filtering.
+\newblock {\em Scientific reports}, 6:33735, 2016.
+
+\bibitem{behjati2013next}
+Sam Behjati and Patrick~S Tarpey.
+\newblock What is next generation sequencing?
+\newblock {\em Archives of Disease in Childhood-Education and Practice},
+  98(6):236--238, 2013.
 
 \bibitem{bash}
 Free~Software Foundation.
@@ -44,11 +56,23 @@ Roswitha Smickl.
 \newblock Sondovac.
 \newblock \url{https://github.com/V-Z/sondovac/}.
 
+\bibitem{wang2014identification}
+Baohua Wang, Yan Zhang, Peipei Wei, Miao Sun, Xiaofei Ma, and Xinyu Zhu.
+\newblock Identification of nuclear low-copy genes and their phylogenetic
+  utility in rosids.
+\newblock {\em Genome}, 57(10):547--554, 2014.
+
 \bibitem{weitemier2014hyb}
 Kevin Weitemier, Shannon~CK Straub, Richard~C Cronn, Mark Fishbein, Roswitha
   Schmickl, Angela McDonnell, and Aaron Liston.
 \newblock Hyb-seq: Combining target enrichment and genome skimming for plant
   phylogenomics.
 \newblock {\em Applications in Plant Sciences}, 2(9):1400042, 2014.
+
+\bibitem{zhang2012highly}
+Ning Zhang, Liping Zeng, Hongyan Shan, and Hong Ma.
+\newblock Highly conserved low-copy nuclear genes as effective markers for
+  phylogenetic analyses in angiosperms.
+\newblock {\em New Phytologist}, 195(4):923--937, 2012.
 
 \end{thebibliography}

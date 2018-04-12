@@ -6,19 +6,9 @@ the data and compare the data we have to other kinds of data. We will also look 
 and how they are further processed. 
 
 \section{What kind of data we are using}
-This just a citation so I know what I need to address later:
-Script sondovac\_part\_a.sh requires as input files:
-1) Transcriptome input file in FASTA format. Note: For technical reasons, the 
-   labels of FASTA sequences must be unique numbers (no other characters). 
-   Sondovač will check the labels, and if they are not in an appropriate form, 
-   a copy of this input file with correct labels will be created.
-2) Plastome reference sequence input file in FASTA format.
-3) Paired-end genome skim input file in FASTQ format (two files - forward and 
-   reverse reads).
-4) OPTIONAL: Mitochondriome reference sequence input file in FASTA format.
-   This file is not required.
+The Sondovac script uses a transcriptome and a paired-end genome skim raw data as a base - to get orthologous LCN loci. 
+It also uses plastome reference sequence which it removes from the skim data. Additionally, the Sondovac can use mitochondriome 
+reference sequence for the same purpose. Finally, the probes are checked for any remaining plastome reference sequences. 
 \cite{sondovac}
-
-\section{Where the data comes from}
 
 

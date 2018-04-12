@@ -10,36 +10,39 @@
 \BOOKMARK [2][-]{subsection.1.3.2}{What kind of data we are using}{section.1.3}% 10
 \BOOKMARK [2][-]{subsection.1.3.3}{Where the data comes from}{section.1.3}% 11
 \BOOKMARK [0][-]{chapter.2}{Hyb-Seq Protocol}{}% 12
-\BOOKMARK [1][-]{section.2.1}{Orthologous genes}{chapter.2}% 13
-\BOOKMARK [1][-]{section.2.2}{Low-copy nuclear genes}{chapter.2}% 14
-\BOOKMARK [1][-]{section.2.3}{Target enrichment}{chapter.2}% 15
-\BOOKMARK [1][-]{section.2.4}{Next generation sequencing}{chapter.2}% 16
-\BOOKMARK [1][-]{section.2.5}{Hyb-Seq Protocol}{chapter.2}% 17
-\BOOKMARK [0][-]{chapter.3}{Existing work - Sondovac}{}% 18
-\BOOKMARK [1][-]{section.3.1}{Sondovac origins}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.2}{The pipeline}{chapter.3}% 20
-\BOOKMARK [2][-]{subsection.3.2.1}{Sondovac part a}{section.3.2}% 21
-\BOOKMARK [2][-]{subsection.3.2.2}{Geneious}{section.3.2}% 22
-\BOOKMARK [2][-]{subsection.3.2.3}{Sondovac part b}{section.3.2}% 23
-\BOOKMARK [1][-]{section.3.3}{Input and output data}{chapter.3}% 24
-\BOOKMARK [2][-]{subsection.3.3.1}{Input data for part a}{section.3.3}% 25
-\BOOKMARK [2][-]{subsection.3.3.2}{Output data}{section.3.3}% 26
-\BOOKMARK [2][-]{subsection.3.3.3}{Input data for part b}{section.3.3}% 27
-\BOOKMARK [2][-]{subsection.3.3.4}{Output data}{section.3.3}% 28
-\BOOKMARK [1][-]{section.3.4}{Use of Sondovac}{chapter.3}% 29
-\BOOKMARK [1][-]{section.3.5}{Used software and tools}{chapter.3}% 30
-\BOOKMARK [2][-]{subsection.3.5.1}{Programming languages}{section.3.5}% 31
-\BOOKMARK [2][-]{subsection.3.5.2}{Tools and software}{section.3.5}% 32
-\BOOKMARK [0][-]{chapter.4}{Results and conclusion}{}% 33
-\BOOKMARK [1][-]{section.4.1}{Using the pipeline}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.2}{Resulting data}{chapter.4}% 35
-\BOOKMARK [0][-]{chapter.5}{Possible Improvements}{}% 36
-\BOOKMARK [1][-]{section.5.1}{Autometed selection of minimum total locus length}{chapter.5}% 37
-\BOOKMARK [2][-]{subsection.5.1.1}{What we want to do, scheme of the program}{section.5.1}% 38
-\BOOKMARK [2][-]{subsection.5.1.2}{Additional requirements}{section.5.1}% 39
-\BOOKMARK [2][-]{subsection.5.1.3}{Input and output}{section.5.1}% 40
-\BOOKMARK [2][-]{subsection.5.1.4}{binary search}{section.5.1}% 41
-\BOOKMARK [1][-]{section.5.2}{Maximalization of space}{chapter.5}% 42
-\BOOKMARK [2][-]{subsection.5.2.1}{Greedy vs Knapsack}{section.5.2}% 43
-\BOOKMARK [2][-]{subsection.5.2.2}{Combined approach}{section.5.2}% 44
-\BOOKMARK [1][-]{section.5.3}{results}{chapter.5}% 45
+\BOOKMARK [1][-]{section.2.1}{Next generation sequencing}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.2}{Hyb-Seq Protocol}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.3}{Orthologous genes}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.4}{Low-copy nuclear genes}{chapter.2}% 16
+\BOOKMARK [0][-]{chapter.3}{Existing work - Sondovac}{}% 17
+\BOOKMARK [1][-]{section.3.1}{Sondovac origins}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.2}{The pipeline}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.2.1}{Sondovac part a}{section.3.2}% 20
+\BOOKMARK [2][-]{subsection.3.2.2}{Geneious}{section.3.2}% 21
+\BOOKMARK [2][-]{subsection.3.2.3}{Sondovac part b}{section.3.2}% 22
+\BOOKMARK [1][-]{section.3.3}{Input and output data}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.3.1}{Input data for part a}{section.3.3}% 24
+\BOOKMARK [2][-]{subsection.3.3.2}{Output data}{section.3.3}% 25
+\BOOKMARK [2][-]{subsection.3.3.3}{Input data for part b}{section.3.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.4}{Output data}{section.3.3}% 27
+\BOOKMARK [1][-]{section.3.4}{Use of Sondovac}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.5}{Used software and tools}{chapter.3}% 29
+\BOOKMARK [2][-]{subsection.3.5.1}{Programming languages}{section.3.5}% 30
+\BOOKMARK [2][-]{subsection.3.5.2}{Tools and software}{section.3.5}% 31
+\BOOKMARK [0][-]{chapter.4}{Practical work and results}{}% 32
+\BOOKMARK [1][-]{section.4.1}{Input data}{chapter.4}% 33
+\BOOKMARK [2][-]{subsection.4.1.1}{Nickel and metallic genes}{section.4.1}% 34
+\BOOKMARK [1][-]{section.4.2}{Process overview}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.3}{Using the pipeline}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.4}{Probe picker}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.5}{Resulting data}{chapter.4}% 38
+\BOOKMARK [0][-]{chapter.5}{Possible Improvements}{}% 39
+\BOOKMARK [1][-]{section.5.1}{Autometed selection of minimum total locus length}{chapter.5}% 40
+\BOOKMARK [2][-]{subsection.5.1.1}{What we want to do, scheme of the program}{section.5.1}% 41
+\BOOKMARK [2][-]{subsection.5.1.2}{Additional requirements}{section.5.1}% 42
+\BOOKMARK [2][-]{subsection.5.1.3}{Input and output}{section.5.1}% 43
+\BOOKMARK [2][-]{subsection.5.1.4}{binary search}{section.5.1}% 44
+\BOOKMARK [1][-]{section.5.2}{Maximalization of space}{chapter.5}% 45
+\BOOKMARK [2][-]{subsection.5.2.1}{Greedy vs Knapsack}{section.5.2}% 46
+\BOOKMARK [2][-]{subsection.5.2.2}{Combined approach}{section.5.2}% 47
+\BOOKMARK [1][-]{section.5.3}{results}{chapter.5}% 48

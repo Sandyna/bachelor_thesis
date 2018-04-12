@@ -1,11 +1,62 @@
-\chapter[Results and conclusion]{Results and conclusion}
+\chapter[Practical work and results]{Practical work and results}
 \label{kap:results}
 
-We will summarize the results of the thesis in this chapter and describe the final data. 
+In this chapter, we will describe the practical work and process of creating suitable probes. We will take a look at parameters and specifications. 
+Lastly, we will summarize the results of the thesis and describe the final data. 
+
+\section{Input data}
+We worked with two different sets of input data. These data shared most of the files, differing only in genome. 
+%Add some statistics here. #of genes, etc.
+
+The first set used the following data: 
+
+
+\begin{enumerate}
+\item Transcriptome: Alyssum alyssoides
+\item Genome: Odontarrhena tortuosa
+\item Mitochondrion: Arabidopsis thaliana
+\item Chloroplast: Arabidopsis thaliana
+\end{enumerate}
+
+The second set used the following data: 
+
+
+\begin{enumerate}
+\item Transcriptome: Alyssum alyssoides
+\item Genome: Alyssum gmelinii
+\item Mitochondrion: Arabidopsis thaliana
+\item Chloroplast: Arabidopsis thaliana
+\end{enumerate}
+
+\subsection{Nickel and metallic genes}
+We were especially interested in nickel and metallic genes that might be present in these genomes. Therefore, we matched the possible 
+probes against nickel and metallic genes and primarily picked those with the greatest similarity. 
+
+%Where do these data come from? Add some statistics
+
+\section{Process overview}
+After several tries, it was estabilished that we will make probes from two sets of data to cover broader spectrum of plants they can 
+be used for. We ran the Sondovac script for each set and got two resulting sets of possible probes. From these possible probes, we 
+proceeded to pick those that fit the criteria the best. Consecutively, the probes have to make up to $1,000,000$ base pairs, due to 
+restrictions of the probe-making company. 
+To pick suitable probes, we matched each data set to nickel and metal genes and chose those that aligned with them. We matched the 
+data sets against each other and picked probes by similarity. We chose only one of the probes that matched. The other one 
+wasn't included in the final probes to avoid duplicates. Finally, the rest was picked so they would make up the $1,000,000$ bases to 
+make the most of the space. 
+
+%add picture/graph here
 
 \section{Using the pipeline}
+The possible probes were produced by running the script Sondovac on two different data sets. We then picked suitable probes from 
+the resulting probes. 
+
+%Sondovac parameters
+We set the minimal total locus length on $360$ for both datasets - the least possible minimal total locus length - so we could get 
+the largest amount of possible probes to pick from. 
+
+
+\section{Probe picker}
 
 \section{Resulting data}
 
-
-
+%Spravila som nejaké grafy
