@@ -34,6 +34,29 @@ probes against nickel and metallic genes and primarily picked those with the gre
 
 %Where do these data come from? Add some statistics
 
+\section{Autometed selection of minimum total locus length}
+
+%Definition of the problem goes here
+When making probes, we usually want to get exact number of bases, because the created probes are later passed to another 
+company, such as MYcroarray (USA) \cite{mycroarray} that will create the actual physical probes from them. These companies 
+usually charge for processing of a precise number of bases. To save money, it is best to fill this number to the brim. 
+Therefore, when we have several sequences available, we want to select such sequences, that the sum of thei lenghts makes the 
+highest number possible, but does not exceed the given limit, let us say $1,000,000$ of base pairs. 
+
+Aside from this, we often have other requirements on the selected sequences, usually based on biological evidence. There might be 
+sequences we do not want in our selection, or even sequences we might want to add. 
+
+This selection is usually done by hand or a series of programmes. It would be beneficial, if this part too, was automated. 
+
+We want to create a script, that would work with the second part of sondovac and would be able to select the best possible 
+sequences to fill up the limit. This script would take into account any sequences we want to keep, or those we do not want in 
+the result. 
+
+We need specific genes - responsible for nickel and metal binding. If these genes are present among our sequences, they have 
+to be in the result. We will take the largest possible output file from sondovac\_part\_b: the one with the lowest minimum total locus length. 
+From this file, we will select the required genes. Any additional probes will be chosen by a combination of greedy algorithm and a knapsack. 
+
+
 \section{Process overview}
 After several tries, it was estabilished that we will make probes from two sets of data to cover broader spectrum of plants they can 
 be used for. We ran the Sondovac script for each set and got two resulting sets of possible probes. From these possible probes, we 
@@ -56,6 +79,16 @@ the largest amount of possible probes to pick from.
 
 
 \section{Probe picker}
+Probe picker is a script that we coded to help with picking the final probes. It is coded in python. The probe picker requires 
+a list of all possible probes to pick from as an input. It can be also given a list of probes we definitely want in the result - such as the 
+ones that aligned with the nickel or metallic genes or intersection of the two genomes - and a list of probes we do not want in 
+the result - such as duplicates or sequences that are too similar to each other, for 
+example the second of the pair of aligned genes from the two genomes we had. 
+
+%Describe the workflow
+
+\subsection{Picker for genes to keep and remove}
+We coded additional script that creates the list of probes we want to have in the result and those we want to remove. 
 
 \section{Resulting data}
 
