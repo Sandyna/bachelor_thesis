@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.11.19)  12 APR 2018 21:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.11.19)  27 APR 2018 13:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -744,35 +744,39 @@ art and son-dovac_part_b.sh.
 
 ] [9] [10]) (./results.tex [11]
 Chapter 4.
-[12
 
-]) (./improvements.tex [13]
-Chapter 5.
-
-Overfull \hbox (9.61894pt too wide) in paragraph at lines 7--7
+Overfull \hbox (9.61894pt too wide) in paragraph at lines 37--37
 []\T1/cmr/bx/n/17.28 Autometed se-lec-tion of min-i-mum to-tal lo-cus length 
  []
 
-[14
+[12
 
-]) [15] (./main.bbl
+] [13] [14]) (./improvements.tex [15]
+Chapter 5.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 16.
+
+) [16
+
+] (./main.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 31.
  (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-[16
+) [17
 
 
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 273.
- [17]
+
+[18]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 273.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 273.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 273.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 882EEC6E1CED5BB9CC8736EB905699AA;3294.
+(rerunfilecheck)             Checksum: 5F47073F216EB28A5101D2F8384A0D21;3308.
 
 
 LaTeX Warning: There were undefined references.
@@ -780,8 +784,8 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 273.
  ) 
 Here is how much of TeX's memory you used:
- 6267 strings out of 492985
- 88553 string characters out of 6138637
+ 6268 strings out of 492985
+ 88560 string characters out of 6138637
  178235 words of memory out of 5000000
  9603 multiletter control sequences out of 15000+600000
  16396 words of font info for 37 fonts, out of 8000000 for 9000
@@ -799,10 +803,10 @@ fcc2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></u
 sr/share/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf-
 dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/fonts/type
 1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (28 pages, 421691 bytes).
+Output written on main.pdf (29 pages, 426803 bytes).
 PDF statistics:
- 596 PDF objects out of 1000 (max. 8388607)
- 526 compressed objects within 6 object streams
- 142 named destinations out of 1000 (max. 500000)
+ 600 PDF objects out of 1000 (max. 8388607)
+ 529 compressed objects within 6 object streams
+ 143 named destinations out of 1000 (max. 500000)
  395 words of extra memory for PDF output out of 10000 (max. 10000000)
 

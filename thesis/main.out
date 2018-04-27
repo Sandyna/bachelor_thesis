@@ -32,17 +32,17 @@
 \BOOKMARK [0][-]{chapter.4}{Practical work and results}{}% 32
 \BOOKMARK [1][-]{section.4.1}{Input data}{chapter.4}% 33
 \BOOKMARK [2][-]{subsection.4.1.1}{Nickel and metallic genes}{section.4.1}% 34
-\BOOKMARK [1][-]{section.4.2}{Process overview}{chapter.4}% 35
-\BOOKMARK [1][-]{section.4.3}{Using the pipeline}{chapter.4}% 36
-\BOOKMARK [1][-]{section.4.4}{Probe picker}{chapter.4}% 37
-\BOOKMARK [1][-]{section.4.5}{Resulting data}{chapter.4}% 38
-\BOOKMARK [0][-]{chapter.5}{Possible Improvements}{}% 39
-\BOOKMARK [1][-]{section.5.1}{Autometed selection of minimum total locus length}{chapter.5}% 40
-\BOOKMARK [2][-]{subsection.5.1.1}{What we want to do, scheme of the program}{section.5.1}% 41
-\BOOKMARK [2][-]{subsection.5.1.2}{Additional requirements}{section.5.1}% 42
-\BOOKMARK [2][-]{subsection.5.1.3}{Input and output}{section.5.1}% 43
-\BOOKMARK [2][-]{subsection.5.1.4}{binary search}{section.5.1}% 44
-\BOOKMARK [1][-]{section.5.2}{Maximalization of space}{chapter.5}% 45
-\BOOKMARK [2][-]{subsection.5.2.1}{Greedy vs Knapsack}{section.5.2}% 46
-\BOOKMARK [2][-]{subsection.5.2.2}{Combined approach}{section.5.2}% 47
-\BOOKMARK [1][-]{section.5.3}{results}{chapter.5}% 48
+\BOOKMARK [1][-]{section.4.2}{Autometed selection of minimum total locus length}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.3}{Process overview}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.4}{Using the pipeline}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.5}{Probe picker}{chapter.4}% 38
+\BOOKMARK [2][-]{subsection.4.5.1}{Knapsack problem and dynamic programming}{section.4.5}% 39
+\BOOKMARK [2][-]{subsection.4.5.2}{Picker for genes to keep and remove}{section.4.5}% 40
+\BOOKMARK [1][-]{section.4.6}{Resulting data}{chapter.4}% 41
+\BOOKMARK [0][-]{chapter.5}{Possible Improvements}{}% 42
+\BOOKMARK [1][-]{subsection.5.0.1}{Input and output}{chapter.5}% 43
+\BOOKMARK [2][-]{subsection.5.0.2}{binary search}{subsection.5.0.1}% 44
+\BOOKMARK [1][-]{section.5.1}{Maximalization of space}{chapter.5}% 45
+\BOOKMARK [2][-]{subsection.5.1.1}{Greedy vs Knapsack}{section.5.1}% 46
+\BOOKMARK [2][-]{subsection.5.1.2}{Combined approach}{section.5.1}% 47
+\BOOKMARK [1][-]{section.5.2}{results}{chapter.5}% 48

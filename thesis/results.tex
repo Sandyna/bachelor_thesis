@@ -77,6 +77,8 @@ the resulting probes.
 We set the minimal total locus length on $360$ for both datasets - the least possible minimal total locus length - so we could get 
 the largest amount of possible probes to pick from. 
 
+%add some statistics about created probes
+
 
 \section{Probe picker}
 Probe picker is a script that we coded to help with picking the final probes. It is coded in python. The probe picker requires 
@@ -85,7 +87,41 @@ ones that aligned with the nickel or metallic genes or intersection of the two g
 the result - such as duplicates or sequences that are too similar to each other, for 
 example the second of the pair of aligned genes from the two genomes we had. 
 
+Aside from lists of probes, the Probe Picker requires a target number of bases to be set and a threshold after which the program should 
+change approaches. After reaching this threshold, the program will start picking the probes so they make up to the $1,000,000$ bases instead of 
+taking probes in order. 
+
 %Describe the workflow
+%Matching name_sequence & length_name
+After the input files are obtained, the Probe Picker will match a sequence's name to sequence using dictionary data type and the sequence's length to 
+its name using an array. 
+
+Then, the script puts sequences to keep and sequences to remove into a dictionary, creating a set for each data. 
+Finally, the actual selection ensues. 
+First, the probe is picked if it isn't in the sequences to remove. If it's also in the sequences to keep, it is automatically put into the output. 
+If the sequence isn't amongst the sequences to remove and it isn't amongst the sequences to keep either, it's saved for later processing; for when we are 
+picking sequences in order or picking them so they make up to the target number of bases. 
+
+After picking the sequences that are present in the list of sequencest to keep, we start filling the rest of the space by the remaining sequences. We sort the 
+sequences in descending order and pick the largest ones until we hit the threshold. The larger the sequence, the higher the possibility that it's relevant 
+when it matches with something. 
+
+After reaching the threshold, we switch to using dynamic programming to make up to the target number of bases with best possible accuracy while not exceeding this 
+number. 
+
+\subsection{Knapsack problem and dynamic programming}
+%Write about knapsack problem
+A knapsack problem is a well known problem in combinatorial optimalisation. The problem goes as follows: If we are given a knapsack with a weight limit and a 
+set of items where each has a value and weight, what is the biggest possible value we can pack into the knapsack while the total weight of items is less or equal to 
+the knapsack's limit. 
+%How does this apply to our problem
+The Probe Picker presents us with a problem, where we have $n$ numbers to choose from and a limit $l$ that we mustn't overstep. This is a variation of the knapsack problem, 
+where the value of each item is equal to its length, or rather, the number of bases it consists of. As a result, we want a list of bases that make the most of the possible space; 
+we want to fill the "knapsack" as precisely as possible without overstepping the limit. 
+%Definition of informatic problem
+
+%Theory, solution, and stuff. Why we can make it quick by dynamic programming
+
 
 \subsection{Picker for genes to keep and remove}
 We coded additional script that creates the list of probes we want to have in the result and those we want to remove. 

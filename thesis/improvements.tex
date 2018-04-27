@@ -4,30 +4,7 @@
 In this chapter we will suggest possible improvements to the pipeline and go through the various approaches to the problem. 
 We will also describe main parts of the actual code and algorithms used. 
 
-\section{Autometed selection of minimum total locus length}
 
-%Definition of the problem goes here
-When making probes, we usually want to get exact number of bases, because the created probes are later passed to another 
-company, such as MYcroarray (USA) \cite{mycroarray} that will create the actual physical probes from them. These companies 
-usually charge for processing of a precise number of bases. To save money, it is best to fill this number to the brim. 
-Therefore, when we have several sequences available, we want to select such sequences, that the sum of thei lenghts makes the 
-highest number possible, but does not exceed the given limit, let us say $1,000,000$ of base pairs. 
-
-Aside from this, we often have other requirements on the selected sequences, usually based on biological evidence. There might be 
-sequences we do not want in our selection, or even sequences we might want to add. 
-
-This selection is usually done by hand or a series of programmes. It would be beneficial, if this part was, too, automated. 
-
-\subsection{What we want to do, scheme of the program}
-
-We want to create a script, that would work with the second part of sondovac and would be able to select the best possible 
-sequences to fill up the limit. This script would take into account any sequences we want to keep, or those we do not want in 
-the result. 
-
-\subsection{Additional requirements}
-We need specific genes - responsible for nickel and metal binding. If these genes are present among our sequences, they have 
-to be in the result. We will take the largest output file from sondovac\_part\_b: the one with the lowest minimum total locus length. 
-From this file, we will select the required genes. The rest will be chosen by a combination of greedy algorithm and a knapsack. 
 
 \subsubsection{Nickel and metal binding genes}
 
