@@ -3,9 +3,8 @@
 
 In this chapter we will introduce the terms and concepts of biology, genetics and computational biology that 
 are commonly used through this thesis. 
-We will explain phylogenetic trees, their significance in evolutionary biology, their construction and 
-their connection to the Hyb-Seq protocol and probes. In addition, we will specify the data we are using, provide 
-a biological background for them and describe the way in which they are processed. 
+We will explain phylogenetic trees, their significance in evolutionary biology and 
+their connection to the Hyb-Seq protocol and probes. 
 
 \section{Terminology overview, basic terms and concepts}
 
@@ -36,37 +35,21 @@ This RNA is called messenger RNA or mRNA. mRNA is then translated into proteins.
 cell or a population of cells is called transcriptome. The transcriptome represents all genes that are being actively expressed. 
 %Central dogma of molecular biology is a description of the flow of genetic information. 
 
-\section{Construction of phylogenetic trees}
+Analogicaly, the DNA from mitochondria is called mitochondrion and the DNA from chloroplast is a plastome. 
 
-Here we will describe why is a construction of a phylogenetic tree important for the study of evolution. We will also look 
-into how the tree can be made from the data we have. 
+%\section{Construction of phylogenetic trees}
 
-\section[Data and objectives]{Data and objectives}
+%Here we will describe why is a construction of a phylogenetic tree important for the study of evolution. We will also look 
+%into how the tree can be made from the data we have. 
 
-In this chapter we will take a closer look at the data we are using. We will cover the biological aspect of 
-the data and compare the data we have to other kinds of data. We will also look at how such data are obtained 
-and how they are further processed. We will define the problem we are facing from the biological point of view and 
-why do we want to solve it. 
+\subsection{Phylogenetic trees}
+In biology, the study of evolutionary history amongst organisms, species, populations, etc. is called phylogenetics. Heritable traits 
+are evaluated to determine a phylogenetic relationship. Earlier, only morphologic traits could be used, but nowadays, DNA sequences 
+or other genetic characteristics are also a valuable genetic markers used in phylogeny. 
 
-\subsection{The actual biological problem}
+A phylogenetic tree is a representation of such relationships. It's a branching diagram, where the taxa that are joined together have 
+descended from a common ancestor. 
 
-In this section we will consider the actuall biological process and lab work behing the creation of probes and, by extension, 
-the phylogenetic tree. We will answer why and how does the biological process work. 
-
-\subsection{What kind of data we are using}
-This just a citation so I know what I need to address later:
-Script sondovac\_part\_a.sh requires as input files:
-1) Transcriptome input file in FASTA format. Note: For technical reasons, the 
-   labels of FASTA sequences must be unique numbers (no other characters). 
-   Sondovač will check the labels, and if they are not in an appropriate form, 
-   a copy of this input file with correct labels will be created.
-2) Plastome reference sequence input file in FASTA format.
-3) Paired-end genome skim input file in FASTQ format (two files - forward and 
-   reverse reads).
-4) OPTIONAL: Mitochondriome reference sequence input file in FASTA format.
-   This file is not required.
-\cite{sondovac}
-
-\subsection{Where the data comes from}
+In this thesis, we tried to find genetic markers which can be used to infer relations in phylogeny of a group of plants. 
 
 
