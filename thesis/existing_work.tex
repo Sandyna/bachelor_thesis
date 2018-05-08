@@ -14,50 +14,17 @@ probes for further use by the Hyb-Seq protocol. It uses transcriptome and genome
 Sondovac does not require strong bioinformatic skills nor high-performance computer. It is 
 intended for either Linux or Mac OS X. 
 
-\section{The pipeline}
+\section{The workflow overview}
 
 Sondovac is written in BASH, an Unix shell and a command language \cite{bash}. It has three 
 parts: sondovac\_part\_a.sh, the geneious \cite{geneious} intermediate part and sondovac\_part\_b.sh. Between 
 the parts a and b of Sondovac it is necessary to manualy input the output from the part a into 
 another software - Geneious, for data processing and then run the part b on the output from the software. 
 
-\subsection{Sondovac part a}%Don't forget we already know here what type of data we have
 
-The part a of the script covers 6 steps: 
+\subsection{Sondovac part a}%Don't forget we already know here what type of data we have. No we don't
 
-\begin{enumerate}
-\item Removing the transcripts that share $\geq$ 90\% sequence similarity
-
-\item Removing the reads of plastid origin
-
-\item Removing the reads of mitochondrial origin
-
-\item Combining the paired-end reads
-
-\item Matching the the unique transcripts and the filtered, combined genome skim reads sharing $\geq$ 85\% sequence similarity
-
-\item Filtering the BLAT output
-\begin{enumerate}
-\item Choosing the transcript or genome skim sequences for further processing
-\item Removing the transcripts with more than 1000 BLAT hits
-\item Removing the transcript or genome skim BLAT hits containing masked nucleotides
-\end{enumerate}
-\end{enumerate}
-
-
-\subsection{Geneious}
-
-\subsection{Sondovac part b}
-Sondovac part b covers 4 steps:
-  
-\begin{enumerate}
-\item Retention of those contigs that comprise exons greater or equal than bait length and have a certain total locus length
-\item Removal of probe sequences sharing greater or equal than 90\% sequence similarity
-\item Retention of those contigs that comprise exons greater or equal than bait length and have a certain total locus length
-\item Removal of probe sequences sharing greater or equal than 90\% sequence similarity with the plastome reference
-\end{enumerate}
-
-\section{Input and output data}
+\subsection{The input and output data}
 
 \subsection{Input data for part a}
 Input data for part a of Sondovac consist of 5 file, 1 of them being optional. 
@@ -72,12 +39,15 @@ unique description.
 \item Mitochondriome reference sequence input file in FASTA format (Optional)
 The file contains a single sequence along with the first line describing it. It is optional, because the size of a plant
 mitochondrial genome can vary greatly and have high rearrangement rates. 
-\item Paired-end genome skim input file in FASTQ format (first file)
-\item Paired-end genome skim input file in FASTQ format (second file)
-\end{enumerate}
-\subsection{Output data}
+\item Paired-end genome skim input file in FASTQ format (first file, the forward reads)
+\item Paired-end genome skim input file in FASTQ format (second file, the reverse reads)
+
+Other than the input files, Sondovac requires a minimum total locus length to be set. 
+
+Output data from part a are the input files for Geneious. 
 
 \subsection{Input data for part b}
+Input data for part b of Sondovac consist of 3 files and include the output data from Geneious. 
 \begin{enumerate}
 \item Input file in TSV format (output of Geneious assembly)
 \item Input file in FASTA format (output of Geneious assembly)
@@ -85,7 +55,150 @@ mitochondrial genome can vary greatly and have high rearrangement rates.
 This file is used in both parts. It consists of a single long sequence and the starting line with '>' and the sequence's 
 unique description. 
 \end{enumerate}
-\subsection{Output data}
+
+
+\section{Workflow, pipeline}
+
+The part a of the script covers 6 steps: 
+
+\begin{enumerate}
+\item Removing the transcripts that share $\geq$ 90\% sequence similarity
+
+We want to get low-copy nuclear orthologous probes. To minimize the enrichment of multi-copy loci, the Sondovac script removes transcripts that 
+are too similar; share $\geq$ 90\% sequence similarity. This is done using BLAT and UNIX commands. From this we get unique transcripts that we match against processed reads. 
+
+\item Removing the reads of plastid origin
+
+Since we want only nuclear probes, the raw paired-end genome data is stripped of the reads that have plastid origin, utilizing the reference input sequences. Tools used for 
+this are Bowtie 2 and Samtools. 
+
+\item Removing the reads of mitochondrial origin
+
+In the same manner, the reads of mitochondrial origin are removed from the paired-end genome data, if the list of mitochondrial sequences is present. Bowtie 2 and Samtools are 
+used. 
+
+\item Combining the paired-end reads
+
+Subsequently, the paired-end reads without plastid and mitochondrial reads are combined using FLASH. 
+
+\item Matching the the unique transcripts and the filtered, combined genome skim reads sharing $\geq$ 85\% sequence similarity. 
+
+Sequences that are well-preserved and therefore present amongst several related species make good genetic markers. Since transcripts are 
+the sequences that are translated into proteins, they rarely change their genetic composition, eg. the bases they consist of. The Sondovac 
+script matches the unique transcripts with the processed paired-end genome skim data. Using BLAT and Unix commands, only sequences that have 
+$\geq$ 85\% similarity are kept.  
+
+\item Filtering the BLAT output
+
+\begin{enumerate}
+\item Choosing the transcript or genome skim sequences for further processing
+
+Either transcript or genome sequences are used as the basic sequences for designing the probes. The choice depends on the phylogenetic depth that should be obtained, but it doesn't 
+matter if the researched taxa are closely related. Defaultly, the genome skim data is used. 
+
+\item Removing the transcripts with more than 1000 BLAT hits
+
+While making an alignment, BLAT makes hits - short similar sequences. The transcripts that achieve $\geq$ 1000 BLAT hits while matching them with filtered 
+combined genome skim reads are removed to avoid repetitive elements. Unix commands are used for filtering and the amount of hits can be adjusted; it can be an 
+integer ranging from 100 to 10000. 
+
+\item Removing the transcript or genome skim BLAT hits containing masked nucleotides
+
+Hits that contain masked nucleotides (nucleotides that are unknown or have various options) are removed as well. 
+
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection{Geneious}
+
+After filtering the BLAST output, de novo assembly of BLAT hits into larger contigs commences. This part is done by Geneious, a desktop software platform 
+that can analyze, asslemble or align sequences. The user has to take output of Sondovac part a and manually process the data with Geneious using the medium 
+sensitivity / fast setting. 
+
+\subsection{Sondovac part b}
+Sondovac part b covers 4 steps. The output data from Geneious assembly and the plastome reference are the input files for part b. 
+  
+\begin{enumerate}
+\item Retention of those contigs that comprise exons greater or equal than bait length and have a certain total locus length
+
+Sequences that are too short aren't good genetic markers, because it's more likely that their presence in the genome is coincidental. Thus, the script picks those contigs that 
+comprise exons with a minimum bait length greater than 120 base pairs and have a set minimum total locus length (the recommended length is 600bp and it has to be a multiple of 
+the bait length), although these values can be adjusted. The selection is done using Unix commands. 
+
+\item Removal of probe sequences sharing greater or equal than 90\% sequence similarity
+
+We don't want the probes to target multiple similar loci, so similar sequences or duplicates are removed using cd-hit-est. 
+
+\item Retention of those contigs that comprise exons greater or equal than bait length and have a certain total locus length
+
+A second filtering for sequences that are too short commences. The parameters are the same as before. 
+
+\item Removal of probe sequences sharing greater or equal than 90\% sequence similarity with the plastome reference
+
+Lastly, the sequences that are present in the plastome reference are removed, since we want to ensure we are targeting only nuclear probes. This is done by BLAT and Unix commands and 
+only sequences that have similarity $\geq$ 90\% are removed. 
+
+\end{enumerate}
+
+\subsection{Additional removal of plastid sequences}
+
+If any remaining plastid sequences are detected, they have to be removed manually from the final output of part b of Sondovac script, since we preffer nuclear probes and 
+plastid genes would occupy too much space on the Illumina lane during target enrichment. 
+
+\end{enumerate}
+
+\section{Output data}
+Each part of the Sondovac pipeline has its own output data. Some of them are further used in the pipeline and other files are purely for user. In this section, we will 
+take a look at the output data from various parts of the Sondovac script. 
+
+\subsection{Output data - part a}
+Sondovac, part a, creates the following files: 
+
+\begin{enumerate}
+
+\item \verb_*_\textunderscore renamed.fasta 
+
+
+
+\item \verb_*_\textunderscore blat\textunderscore unique\textunderscore transcripts.psl
+
+
+
+\item \verb_*_\textunderscore unique\textunderscore transcripts.fasta
+
+
+
+\item \verb_*_\textunderscore genome\textunderscore skim\textunderscore data\textunderscore no\textunderscore cp\textunderscore reads
+
+
+
+\item \verb_*_\textunderscore genome\textunderscore skim\textunderscore data\textunderscore no\textunderscore cp\textunderscore no\textunderscore mt\textunderscore reads
+
+
+
+\item \verb_*_\textunderscore combined\textunderscore reads\textunderscore co\textunderscore cp\textunderscore no\textunderscore mt\textunderscore reads
+
+
+\item \verb_*_\textunderscore blat\textunderscore unique\textunderscore transcripts\textunderscore versus\textunderscore genome\textunderscore skim\textunderscore data.pslx
+
+
+\item \verb_*_\textunderscore blat\textunderscore unique\textunderscore transcripts\textunderscore versus\textunderscore genome\textunderscore skim\textunderscore data.fasta
+
+
+\item \verb_*_\textunderscore blat\textunderscore unique\textunderscore transcripts\textunderscore versus\textunderscore genome\textunderscore skim\textunderscore data-no\textunderscore missing\textunderscore fin.fsa
+
+
+
+Only the last file is necessary for further processing as the input for Geneious. However, other files may be useful for the user. 
+
+\end{enumerate}
+
+\subsection{Output data - Geneious}
+
+
+\subsection{Output data - part b}
+
 
 \section{Use of Sondovac}
 Here we will write about how to use Sondovac, what modes does it run and what flags or settings can be used. 
