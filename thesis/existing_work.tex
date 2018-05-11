@@ -128,7 +128,7 @@ the bait length), although these values can be adjusted. The selection is done u
 
 \item Removal of probe sequences sharing greater or equal than 90\% sequence similarity
 
-We don't want the probes to target multiple similar loci, so similar sequences or duplicates are removed using cd-hit-est. 
+We don't want the probes to target multiple similar loci, so similar sequences or duplicates are removed using CD-HIT. 
 
 \item Retention of those contigs that comprise exons greater or equal than bait length and have a certain total locus length
 
@@ -151,87 +151,229 @@ plastid genes would occupy too much space on the Illumina lane during target enr
 \section{Output data}
 Each part of the Sondovac pipeline has its own output data. Some of them are further used in the pipeline and other files are purely for user. In this section, we will 
 take a look at the output data from various parts of the Sondovac script. 
+An asterisk (\verb_*_) in the name of file indicates the part of the file name that is specified by the user with the '-o' flag. Default value is 'output'. 
 
 \subsection{Output data - part a}
+
+Only the last file is necessary for further processing as the input for Geneious. However, other files may be useful for the user. 
 Sondovac, part a, creates the following files: 
 
 \begin{enumerate}
 
-\item \verb_*_\textunderscore renamed.fasta 
+\item \verb_*_\_renamed.fasta 
 
+Copy of the transcriptome file where the labels of FASTA sequences were changed - unique numbers now correspond to the original file's line numbers. 
 
+\item \verb_*_\_old\_and\_new\_names.tsv 
 
-\item \verb_*_\textunderscore blat\textunderscore unique\textunderscore transcripts.psl
+This file contains two columns - labels of the original sequences as it was in the transcriptome file provided by the user in the first, and new sequence labels in the 
+second. This file and the \verb_*_\_renamed.fasta file can be used to trace back certain sequences or probes. 
 
+\item \verb_*_\_blat\_unique\_transcripts.psl
 
+Unique transcripts that are the output of BLAT after removal of the sequences that have $\geq$ 90\% similarity. 
 
-\item \verb_*_\textunderscore unique\textunderscore transcripts.fasta
+\item \verb_*_\_unique\_transcripts.fasta
 
+Unique transcripts that are the output of BLAT in FASTA format. 
 
+\item \verb_*_\_genome\_skim\_data\_no\_cp\_reads
 
-\item \verb_*_\textunderscore genome\textunderscore skim\textunderscore data\textunderscore no\textunderscore cp\textunderscore reads
+Genome skim data without the cpDNA reads - after the chloroplast DNA is removed. 
 
+\item \verb_*_\_genome\_skim\_data\_no\_cp\_no\_mt\_reads
 
+Genome skim data without the mtDNA reads - after the mitochondrial DNA is removed. This file is present only if the mitochondriome reference data was provided. 
 
-\item \verb_*_\textunderscore genome\textunderscore skim\textunderscore data\textunderscore no\textunderscore cp\textunderscore no\textunderscore mt\textunderscore reads
+\item \verb_*_\_combined\_reads\_co\_cp\_no\_mt\_reads
 
+Paired-end genome skim reads that are combined. 
 
+\item \verb_*_\_blat\_unique\_transcripts\_versus\_genome\_skim\_data.pslx
 
-\item \verb_*_\textunderscore combined\textunderscore reads\textunderscore co\textunderscore cp\textunderscore no\textunderscore mt\textunderscore reads
+Output of BLAT after matching the unique transcripts and combined paired-end genome skim reads that have $\geq$ 85\% similarity. 
 
+\item \verb_*_\_blat\_unique\_transcripts\_versus\_genome\_skim\_data.fasta
 
-\item \verb_*_\textunderscore blat\textunderscore unique\textunderscore transcripts\textunderscore versus\textunderscore genome\textunderscore skim\textunderscore data.pslx
+Output of BLAT after matching the unique transcripts and combined paired-end genome skim reads in FASTA format. 
 
+\item \verb_*_\_blat\_unique\_transcripts\_versus\_genome\_skim\_data-no\_missing\_fin.fsa
 
-\item \verb_*_\textunderscore blat\textunderscore unique\textunderscore transcripts\textunderscore versus\textunderscore genome\textunderscore skim\textunderscore data.fasta
+Final sequences for further use in Geneious. This is a FASTA file and the only file that is used further in the pipeline. 
 
-
-\item \verb_*_\textunderscore blat\textunderscore unique\textunderscore transcripts\textunderscore versus\textunderscore genome\textunderscore skim\textunderscore data-no\textunderscore missing\textunderscore fin.fsa
-
-
-
-Only the last file is necessary for further processing as the input for Geneious. However, other files may be useful for the user. 
 
 \end{enumerate}
 
 \subsection{Output data - Geneious}
 
+The output data from Geneious is the input data for the Sondovac script, part b, along with the plastome reference. 
+Geneious output consists of two files: 
+\begin{enumerate}
+\item Assembled sequences from Geneious - a file exported in TSV format
+\item Assembled sequences from Geneious - a file exporded in FASTA format
+\end{enumerate}
 
 \subsection{Output data - part b}
 
+The Sondovac script, part b creates the following files: 
 
-\section{Use of Sondovac}
-Here we will write about how to use Sondovac, what modes does it run and what flags or settings can be used. 
+\begin{enumerate}
+\item \verb_*_\_prelim\_probe\_seq.fasta
+
+Preliminary probes in FASTA format. 
+
+\item \verb_*_\_prelim\_probe\_seq\_cluster\_100.fasta
+
+Unclustered exons and exons that have 100\% sequence identity - the bases match exactly between two different sequences. The file is in 
+FASTA format. 
+
+\item \verb_*_\_prelim\_probe\_seq\_cluster\_90.clstr
+
+Unclustered exons and exons that have more than certain sequence identity in CLSTR format. 
+
+\item \verb_*_\_unique\_prelim\_probe\_seq.fasta
+
+Unclustered exons and exons that have less than a certain sequence similarity. 
+
+\item \verb_*_\_similarity\_test.fasta
+
+Contigs that comprise exons with greater or equal minimum bait length and have a certain minimum total locus length. 
+
+\item \verb_*_\_target\_enrichment\_probe\_sequences\_with\_pt.fasta
+
+Probes in FASTA format, that contain putative plastid sequences. If any BLAT hits were present, the possible plastid sequences are listed in the 
+\verb_*_\_possible\_cp\_dna\_gene\_in\_probe\_set.pslx file. 
+
+\item \verb_*_\_possible\_cp\_dna\_gene\_in\_probe\_set.pslx
+
+A list of putative chloroplast sequences in case of any BLAT hits. These sequences are best to be removed from the final probe list, as we preffer nuclear probes. 
+
+\item \verb_*_\_target\_enrichment\_probe\_sequences.fasta
+
+The final list of probes in FASTA format. 
+
+\end{enumerate}
+
+
 \section{Used software and tools}
-
 Sondovac uses a broad variety of tools and scientific software packages, both freeware and payware. It is mainly coded in BASH, but it also uses smaller python 
 scripts. We will take a closer look at what each of the tools is and what does it do in the Sondovac script. 
 
 \subsection{Programming languages}
+Here we will take a look at programming languages the Sondovac script uses. 
+%What it is, what it is used for, citation, what part does it play in Sondovac
+
 \begin{enumerate}
 \item BASH
+
+BASH is a command line interpreter (or shell) and a command language for Unix. It's a programming scripting language accessible through a terminal in 
+any Unix-based operating system. It is a free software. Scripts written in BASH usually have the extension \verb_*_.sh. 
+
+The Sondovac script is written in BASH. Using this language, it runs other programms and scripts. It is also used to work with files or manipulate and filter the data. 
+
 \item Python
+
+Python is an interpreted programming language. 
+Several scripts that Sondovac uses are coded in Python. 
+
 \end{enumerate}
 
 \subsection{Tools and software}
 
-This is just structure, there will be more about each of these tools. 
+In this section, we will list the most inportant tools and software that Sondovac uses. Some of the software changed or was replaced with a newer version of Sondovac, 
+but the tools and software listed here comprise are essential part of Sondovac. 
+Sondovac uses the following software: 
 
 \begin{enumerate}
-\item Bam2fastq
+
+%\item Bam2fastq
+%Dropped in favor of Samtools
+%Picard is not used
+
 \item BLAT
+
+BLAT -- the BLAST like alignment tool -- is a pairwise sequence alignment algorithm. \cite{kent2002blat}
+It is used by the Sondovac script to match reads to unique transcripts and for other alignments. It is used 
+in both parts of the script. 
+
 \item Bowtie2
-Bowtie2 is a tool used for aligning sequencing reads to longer reference sequences. \cite{bowtie2}
+
+Bowtie2 is a memory-efficient tool used for aligning sequencing reads to longer reference sequences. It keeps an FM index to save memory. Bowtie2 has 
+local, gaped and paired-end alignment modes. \cite{bowtie2}
 %We used Bowtie2 for aligning the sequences we need to keep to the sequences we have. 
+It is used in Sondovac, part a to find plastome or mitochondrione sequences in the genome. 
+
 \item CD-HIT
-\item FASTX toolkit
+
+CD-HIT is a program for clustering and comparing protein or nucleotide sequences. It can compare two databases and identify sequences that 
+are similar above a threshold. \cite{cd-hit}
+It is used in Sondovac, part b, to remove sequences that share similarity above 90\%. 
+
+%\item FASTX toolkit
+%Was removed in 6.1, replaced by shell function
+%fastq to fasta
+
+
 \item FLASH
+
+FLASH -- Fast Length Adjustment of SHort --- is an accurate and fast tool to combine or merge paired-end reads. It works the best 
+on fragments that are shorter than twice the length of reads. The longer the reads, the better the result of assembly. 
+\cite{flash}
+
+It is used in Sondovac, part a to combine paired-end reads. 
+%G++, GCC ??
+
 \item Geneious
-\item Htsjdk
-%I am pretty sure they just hit random keys and then came up with a clever meaning for this one. 
-\item Libgtextutils
-\item Picard
-\item SAMtools
-%What do they mean by basic Unix tools? Check this
+
+Geneious is a payware software that can be used for organizing, analyzing, assembling or aligning DNA. It can run in interactive or non-interactive mode. 
+
+Geneious is an intermediate step between Sondovac part a and part b. It requires the data to be put in it manually. It is used for de novo assembly 
+of the genome or transcript skim BLAT hits. It creates larger contigs from the data. 
+There are plans to replace the part that Geneious does by another free open-source command line tool and thus make the Sondovac pipeline fully automated. 
+
+%GNU core utils
+%In a new version
+
+\item Grab\_singleton\_clusters.py
+
+Grab\_singleton\_clusters.py is a python script designed in the paper "K. Weitemier, S.C.K. Straub, R. Cronn, M. Fishbein, A. McDonnell, R. Schmickl, and A. Liston. 2014. Hyb-Seq: Combining target enrichment and genome skimming for plant phylogenomics Applications in Plant Sciences 2(9): 1400042" \cite{weitemier2014hyb}. It finds clusters from a CD-HIT \verb_*_.clstr file that only one sequence with 100\% identity. If it contains multiple sequences with 100\% identity, it will choose the longes sequence possible. As an output, it creates a \verb_*_.clstr format. 
+\cite{grabsingletonclusters}
+This program is used in the Sondovac, part b. 
+
+\item Samtools
+
+Samtools is a collection of programs for manipulating with high-throughput sequencing data. Three separate repositories are present: 
+\begin{enumerate}
+\item Samtools - Working with files in SAM/BAM/CRAM format
+\item BCFtools - Working with files in BCF$_2$/VCF/gVCF format
+\item HTSlib - A C library for reading and writing high-throughput sequencing data
 \end{enumerate}
+\cite{samtools}
+
+In Sondovac script, SAMtools is used in part a to convert SAM files to BAM files. 
+
+%htsjdk
+%I am pretty sure they just hit random keys and then came up with a clever meaning for this one. 
+
+%\item Libgtextutils %?
+%Required by FASTXtoolkit
+
+%\item Picard%?
+%Not used anymore
+
+%\item zlib
+%data compresion new version
+
+%What do they mean by basic Unix tools? Check this
+
+
+\end{enumerate}
+
+\section{Use of Sondovac}
+Here we will write about how to use Sondovac, what modes does it run and what flags or settings can be used.
+
+DO I EVEN WANT THIS PART HERE? 
+%\subsection{Installation}
+
+
 

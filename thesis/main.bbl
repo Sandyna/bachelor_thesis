@@ -2,14 +2,30 @@
   \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}
 \begin{thebibliography}{10}
 
+\bibitem{cd-hit}
+Cd-hit.
+\newblock \url{http://weizhongli-lab.org/cd-hit/}.
+
+\bibitem{flash}
+Flash.
+\newblock \url{https://sourceforge.net/projects/flashpage/}.
+
 \bibitem{geneious}
+Geneious.
+\newblock \url{http://www.geneious.com/}.
 
-
-\bibitem{bowtie2}
-
+\bibitem{grabsingletonclusters}
+grab\_singleton\_clusters.py.
+\newblock
+  \url{https://github.com/listonlab/Hyb-Seq\_protocol/tree/master/grab\_singleton\_clusters}.
 
 \bibitem{mycroarray}
+Mycroarray.
+\newblock \url{http://www.mycroarray.com/}.
 
+\bibitem{samtools}
+Samtools.
+\newblock \url{http://www.htslib.org/}.
 
 \bibitem{anand2016next}
 Santosh Anand, Eleonora Mangano, Nadia Barizzone, Roberta Bordoni, Melissa
@@ -25,10 +41,26 @@ Sam Behjati and Patrick~S Tarpey.
 \newblock {\em Archives of Disease in Childhood-Education and Practice},
   98(6):236--238, 2013.
 
+\bibitem{bowtie2}
+bowtie.
+\newblock Bowtie2.
+\newblock \url{http://bowtie-bio.sourceforge.net/bowtie2/index.shtml}.
+
+\bibitem{denver2016genome}
+Dee~R Denver, Amanda~MV Brown, Dana~K Howe, Amy~B Peetz, and Inga~A Zasada.
+\newblock Genome skimming: a rapid approach to gaining diverse biological
+  insights into multicellular pathogens.
+\newblock {\em PLoS pathogens}, 12(8):e1005713, 2016.
+
 \bibitem{bash}
 Free~Software Foundation.
 \newblock Bash.
 \newblock \url{https://www.gnu.org/software/bash/}.
+
+\bibitem{kent2002blat}
+W~James Kent.
+\newblock Blat—the blast-like alignment tool.
+\newblock {\em Genome research}, 12(4):656--664, 2002.
 
 \bibitem{phylogenetics}
 Colective of~authors.

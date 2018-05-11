@@ -3,68 +3,57 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: literatura.bib
-You're missing a field name---line 103 of file literatura.bib
- : 
- : % title={Geneious},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-You're missing a field name---line 113 of file literatura.bib
- : 
- : % title={Mycroarray},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-You're missing a field name---line 231 of file literatura.bib
- : 
- : % title={Bowtie2),
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "a"
 Warning--I didn't find a database entry for "b"
 Warning--I didn't find a database entry for "w"
+Warning--I didn't find a database entry for "d"
 Warning--I didn't find a database entry for "z"
 Warning--I didn't find a database entry for "s"
 Warning--to sort, need author or key in geneious
-Warning--to sort, need author or key in bowtie2
+Warning--to sort, need author or key in cd-hit
+Warning--to sort, need author or key in flash
+Warning--to sort, need author or key in grabsingletonclusters
+Warning--to sort, need author or key in samtools
 Warning--to sort, need author or key in mycroarray
-You've used 14 entries,
+You've used 20 entries,
             2118 wiz_defined-function locations,
-            575 strings with 6149 characters,
-and the built_in function-call counts, 4060 in all, are:
-= -- 360
-> -- 216
+            609 strings with 6955 characters,
+and the built_in function-call counts, 5512 in all, are:
+= -- 508
+> -- 261
 < -- 0
-+ -- 88
-- -- 74
-* -- 288
-:= -- 666
-add.period$ -- 36
-call.type$ -- 14
-change.case$ -- 76
++ -- 108
+- -- 88
+* -- 369
+:= -- 884
+add.period$ -- 54
+call.type$ -- 20
+change.case$ -- 104
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 126
-empty$ -- 340
-format.name$ -- 74
-if$ -- 826
+cite$ -- 26
+duplicate$ -- 176
+empty$ -- 486
+format.name$ -- 88
+if$ -- 1149
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 7
-newline$ -- 68
-num.names$ -- 22
-pop$ -- 108
+int.to.str$ -- 20
+missing$ -- 9
+newline$ -- 98
+num.names$ -- 28
+pop$ -- 169
 preamble$ -- 2
-purify$ -- 65
+purify$ -- 84
 quote$ -- 0
-skip$ -- 108
+skip$ -- 128
 stack$ -- 0
-substring$ -- 215
-swap$ -- 14
+substring$ -- 294
+swap$ -- 20
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
-warning$ -- 3
-while$ -- 33
-width$ -- 16
-write$ -- 128
-(There were 3 error messages)
+type$ -- 80
+warning$ -- 6
+while$ -- 42
+width$ -- 22
+write$ -- 189
+(There were 12 warnings)
