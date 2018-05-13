@@ -23,23 +23,22 @@
 \contentsline {subsection}{\numberline {3.3.3}Additional removal of plastid sequences}{11}{subsection.3.3.3}
 \contentsline {section}{\numberline {3.4}Output data}{11}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Output data - part a}{11}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Output data - Geneious}{12}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Output data - part b}{12}{subsection.3.4.3}
-\contentsline {section}{\numberline {3.5}Used software and tools}{13}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Programming languages}{13}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Tools and software}{14}{subsection.3.5.2}
-\contentsline {section}{\numberline {3.6}Use of Sondovac}{15}{section.3.6}
-\contentsline {chapter}{\numberline {4}Practical work and results}{16}{chapter.4}
-\contentsline {section}{\numberline {4.1}Input data}{16}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Nickel and metallic genes}{17}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}What kind of data we are using}{17}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Autometed selection of probes}{17}{section.4.2}
-\contentsline {section}{\numberline {4.3}Process overview}{18}{section.4.3}
-\contentsline {section}{\numberline {4.4}Using the pipeline}{18}{section.4.4}
-\contentsline {section}{\numberline {4.5}Probe picker}{18}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Knapsack problem and dynamic programming}{19}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Picker for genes to keep and remove}{19}{subsection.4.5.2}
-\contentsline {section}{\numberline {4.6}Resulting data}{19}{section.4.6}
-\contentsline {chapter}{\numberline {5}Results}{20}{chapter.5}
-\contentsline {chapter}{\numberline {6}Possible Improvements}{21}{chapter.6}
-\contentsline {subsection}{\numberline {6.0.1}Full automatization}{21}{subsection.6.0.1}
+\contentsline {subsection}{\numberline {3.4.2}Output data - Geneious}{14}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Output data - part b}{14}{subsection.3.4.3}
+\contentsline {section}{\numberline {3.5}Used software and tools}{15}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Programming languages}{15}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Tools and software}{16}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Use of Sondovac}{17}{section.3.6}
+\contentsline {chapter}{\numberline {4}Practical work and results}{18}{chapter.4}
+\contentsline {section}{\numberline {4.1}Input data}{18}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Nickel and metallic genes}{19}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}What kind of data we are using}{19}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Autometed selection of probes}{19}{section.4.2}
+\contentsline {section}{\numberline {4.3}Process overview}{20}{section.4.3}
+\contentsline {section}{\numberline {4.4}Using the pipeline}{20}{section.4.4}
+\contentsline {section}{\numberline {4.5}Probe picker}{21}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Knapsack problem and dynamic programming}{21}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Picking the genes to keep and remove}{23}{subsection.4.5.2}
+\contentsline {chapter}{\numberline {5}Results}{25}{chapter.5}
+\contentsline {chapter}{\numberline {6}Possible Improvements}{26}{chapter.6}
+\contentsline {subsection}{\numberline {6.0.1}Full automatization}{26}{subsection.6.0.1}

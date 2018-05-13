@@ -38,8 +38,7 @@
 \BOOKMARK [1][-]{section.4.4}{Using the pipeline}{chapter.4}% 38
 \BOOKMARK [1][-]{section.4.5}{Probe picker}{chapter.4}% 39
 \BOOKMARK [2][-]{subsection.4.5.1}{Knapsack problem and dynamic programming}{section.4.5}% 40
-\BOOKMARK [2][-]{subsection.4.5.2}{Picker for genes to keep and remove}{section.4.5}% 41
-\BOOKMARK [1][-]{section.4.6}{Resulting data}{chapter.4}% 42
-\BOOKMARK [0][-]{chapter.5}{Results}{}% 43
-\BOOKMARK [0][-]{chapter.6}{Possible Improvements}{}% 44
-\BOOKMARK [1][-]{subsection.6.0.1}{Full automatization}{chapter.6}% 45
+\BOOKMARK [2][-]{subsection.4.5.2}{Picking the genes to keep and remove}{section.4.5}% 41
+\BOOKMARK [0][-]{chapter.5}{Results}{}% 42
+\BOOKMARK [0][-]{chapter.6}{Possible Improvements}{}% 43
+\BOOKMARK [1][-]{subsection.6.0.1}{Full automatization}{chapter.6}% 44

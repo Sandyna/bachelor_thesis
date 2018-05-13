@@ -2,8 +2,8 @@
 \label{kap:practical_work}
 
 In this chapter,  we will specify the data we are using, provide a biological background for them and describe the way in which they are processed. 
-We will describe the practical work and process of creating suitable probes. We will take a look at parameters and specifications. 
-Lastly, we will summarize the results of the thesis and describe the final data. 
+We will describe the practical work and process of creating suitable probes. We will take a look at parameters and specifications we used during the 
+run of the Sondovac script. 
 
 \section{Input data}
 In this chapter we will take a closer look at the data we are using. We will cover the biological aspect of 
@@ -85,7 +85,16 @@ data sets against each other and picked probes by similarity. We chose only one 
 wasn't included in the final probes to avoid duplicates. Finally, the rest was picked so they would make up the $1,000,000$ bases to 
 make the most of the space. 
 
-%add picture/graph here
+
+\begin{figure}
+\centerline{
+	\includegraphics[width=1\textwidth]{graphs/selecting_probes}
+}
+\caption[Workflow of picking the probes]{Flowchart illustrating the workflow of picking the final probes from all possible probes.}
+\label{obr:picking_probes}
+\end{figure}
+
+
 
 \section{Using the pipeline}
 The possible probes were produced by running the script Sondovac on two different data sets. We then picked suitable probes from 
@@ -127,9 +136,18 @@ when it matches with something.
 After reaching the threshold, we switch to using dynamic programming to make up to the target number of bases with best possible accuracy while not exceeding this 
 number. 
 
+\begin{figure}
+\centerline{
+	\includegraphics[width=1\textwidth]{graphs/probe_picker_workflow}
+}
+\caption[Workflow of Probe Picker script]{Flowchart illustrating the workflow of the script "Probe Picker".}
+\label{obr:probe_picker}
+\end{figure}
+
+
 \subsection{Knapsack problem and dynamic programming}
 %Write about knapsack problem
-A knapsack problem is a well known problem in combinatorial optimalisation. The problem goes as follows: If we are given a knapsack with a weight limit and a 
+The knapsack problem is a well known problem in combinatorial optimalisation. The problem goes as follows: If we are given a knapsack with a weight limit and a 
 set of items where each has a value and weight, what is the biggest possible value we can pack into the knapsack while the total weight of items is less or equal to 
 the knapsack's limit. 
 %How does this apply to our problem
@@ -141,9 +159,29 @@ The original version of
 %Theory, solution, and stuff. Why we can make it quick by dynamic programming
 
 
-\subsection{Picker for genes to keep and remove}
-We coded additional script that creates the list of probes we want to have in the result and those we want to remove. 
+\subsection{Picking the genes to keep and remove}
 
-\section{Resulting data}
+We decided to keep probes, that align with nickel and metal genes and also reads that are present -- or at least have certain similarity -- in the intersection of both 
+Odontarrhena tortuosa and Alyssum gmelinii genome. Naturally, we also want to create a list of probes to remove, where we would put the probes that are too similar to each other, in this 
+case the second of the aligned reads from the intersection of the genomes. 
 
-%Spravila som nejaké grafy
+First step was to align probes with metal and nickel reference. We used LAST -- a software for finding similar regions between sequences and aligning them. \cite{last} 
+We used the basic settings of LAST and the commands "lastdb" to create a database from reference metal and nickel sequences. After that, we used the command "lastal" to 
+align the probes to the reference. 
+
+Both the odontarrhena tortuosa probes and the alyssum gmelinii probes wer were aligned to both metal and nickel reference, resulting in four different alignments. 
+
+After this, we aligned the odontarrhena tortuosa probes to the alyssum gmelinii probes, as we wanted an intersection of these probes. 
+
+These lists are then filtered using a Python script to pick those, that meet the requirements. 
+In the case of the probes aligned with metal and nickel reference, it was required for at least 90\% of the probe to fit into the reference sequence and this part had to have at least 90\% similarity. 
+The Python script determined the similarity based on ration of achieved score and the maximal possible score. If at least 90\% of the probe fit into the reference was determined on ration of the alignment lenght 
+and probe length. 
+Another Python script was created to filter the aligned Odontarrhena tortuosa and Alyssum gmelinii genome probes. In this case, the requirements were that the similarity had to be at least 90\% and the length of the probe had to be at least 120 bp. Later, the requirement on similarity was changed to $\geq$ 80\% due to low number of aligned probes. 
+
+We coded additional script that creates the list of probes we want to have in the result and those we want to remove from these aligned sequences. 
+This script takes the list of names of aligned probes that meet the requirements -- the output from the previous script -- and a list of probes that aligned to the metal and nickel reference (or probes to probes in case of alignment of Odontarrhena tortuosa and Alyssum gmelinii probes) and creates a list of probes to keep from this file. It then sorts the list of aligned probes and sorts them based on similarity, so the 
+probes with best score are the ones that are taken first. 
+
+The script takes probes from this list in order and for each probe, it puts this probe (both sequence and name) into the final list of probes we want to keep. Then it puts the probe it aligned with or any other 
+similar probes and puts these into the list of probes we want to remove. This is done to avoid having duplicates or sequences that are too similar to each other amongst the probes. If 

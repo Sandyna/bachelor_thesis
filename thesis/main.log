@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.11.19)  11 MAY 2018 19:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2018.5.12)  13 MAY 2018 20:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main
 (./main.tex
 LaTeX2e <2017-04-15>
-Babel <3.15> and hyphenation patterns for 84 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/bk12.clo
@@ -394,7 +394,7 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
 (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen111
 \Gin@req@width=\dimen112
@@ -404,7 +404,7 @@ File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
+Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
 
 (/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
@@ -427,7 +427,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -460,7 +460,7 @@ Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 \Hy@pagecounter=\count92
 
 (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
@@ -469,38 +469,37 @@ Now handling font encoding PD1 ...
 (/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 4374.
-Package hyperref Info: Hyper figures OFF on input line 4498.
-Package hyperref Info: Link nesting OFF on input line 4503.
-Package hyperref Info: Hyper index ON on input line 4506.
-Package hyperref Info: Plain pages OFF on input line 4513.
-Package hyperref Info: Backreferencing OFF on input line 4518.
+Package hyperref Info: Option `breaklinks' set `true' on input line 4383.
+Package hyperref Info: Hyper figures OFF on input line 4509.
+Package hyperref Info: Link nesting OFF on input line 4514.
+Package hyperref Info: Hyper index ON on input line 4517.
+Package hyperref Info: Plain pages OFF on input line 4524.
+Package hyperref Info: Backreferencing OFF on input line 4529.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4751.
+Package hyperref Info: Bookmarks ON on input line 4762.
 \c@Hy@tempcnt=\count94
-LaTeX Info: Redefining \url on input line 5104.
+LaTeX Info: Redefining \url on input line 5115.
 \XeTeXLinkMargin=\dimen114
 \Fld@menulength=\count95
 \Field@Width=\dimen115
 \Fld@charsize=\dimen116
-Package hyperref Info: Hyper figures OFF on input line 6358.
-Package hyperref Info: Link nesting OFF on input line 6363.
-Package hyperref Info: Hyper index ON on input line 6366.
-Package hyperref Info: backreferencing OFF on input line 6373.
-Package hyperref Info: Link coloring OFF on input line 6378.
-Package hyperref Info: Link coloring with OCG OFF on input line 6383.
-Package hyperref Info: PDF/A mode OFF on input line 6388.
-LaTeX Info: Redefining \ref on input line 6428.
-LaTeX Info: Redefining \pageref on input line 6432.
+Package hyperref Info: Hyper figures OFF on input line 6369.
+Package hyperref Info: Link nesting OFF on input line 6374.
+Package hyperref Info: Hyper index ON on input line 6377.
+Package hyperref Info: backreferencing OFF on input line 6384.
+Package hyperref Info: Link coloring OFF on input line 6389.
+Package hyperref Info: Link coloring with OCG OFF on input line 6394.
+Package hyperref Info: PDF/A mode OFF on input line 6399.
+LaTeX Info: Redefining \ref on input line 6439.
+LaTeX Info: Redefining \pageref on input line 6443.
 \Hy@abspage=\count96
 \c@Item=\count97
 \c@Hfootnote=\count98
 )
-
-Package hyperref Message: Driver (autodetected): hpdftex.
+Package hyperref Info: Driver (autodetected): hpdftex.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
+File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
 \Fld@listcount=\count99
 \c@bookmark@seq@number=\count100
 
@@ -622,28 +621,23 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 83.
  [2]
-<images/assignment_sandalova.pdf, id=196, pagebox=cropbox, 597.23125pt x 845.15
-75pt>
+<images/assignment_sandalova.pdf, id=192, 597.23125pt x 845.1575pt>
 File: images/assignment_sandalova.pdf Graphic file (type pdf)
 <use images/assignment_sandalova.pdf>
 Package pdftex.def Info: images/assignment_sandalova.pdf  used on input line 11
-1. on input line 111.
-Package pdftex.def Info: Requested size: 485.1222pt x 686.52113pt on input line
- 111.
+1.
+(pdftex.def)             Requested size: 485.1222pt x 686.52113pt.
 
 Overfull \hbox (4.82378pt too wide) in paragraph at lines 111--112
 [] [] 
  []
 
 [3 <./images/assignment_sandalova.pdf>]
-<images/zadanie_sandalova.pdf, id=227, pagebox=cropbox, 597.23125pt x 845.1575p
-t>
+<images/zadanie_sandalova.pdf, id=223, 597.23125pt x 845.1575pt>
 File: images/zadanie_sandalova.pdf Graphic file (type pdf)
 <use images/zadanie_sandalova.pdf>
-Package pdftex.def Info: images/zadanie_sandalova.pdf  used on input line 115. 
-on input line 115.
-Package pdftex.def Info: Requested size: 485.1222pt x 686.52113pt on input line
- 115.
+Package pdftex.def Info: images/zadanie_sandalova.pdf  used on input line 115.
+(pdftex.def)             Requested size: 485.1222pt x 686.52113pt.
 
 Overfull \hbox (4.82378pt too wide) in paragraph at lines 115--116
 [] [] 
@@ -746,20 +740,33 @@ art and son-dovac_part_b.sh.
 [7
 
 ] [8] [9] [10]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 154.
+<graphs/sondovac_overview.pdf, id=433, 809.0225pt x 994.71625pt>
+File: graphs/sondovac_overview.pdf Graphic file (type pdf)
+<use graphs/sondovac_overview.pdf>
+Package pdftex.def Info: graphs/sondovac_overview.pdf  used on input line 154.
+(pdftex.def)             Requested size: 441.01773pt x 542.2538pt.
+<graphs/sondovac_overview_part_b.pdf, id=434, 915.42pt x 793.96625pt>
+File: graphs/sondovac_overview_part_b.pdf Graphic file (type pdf)
+<use graphs/sondovac_overview_part_b.pdf>
+Package pdftex.def Info: graphs/sondovac_overview_part_b.pdf  used on input lin
+e 162.
+(pdftex.def)             Requested size: 441.01773pt x 382.5048pt.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 171.
 
  (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [11] [12]
-Overfull \hbox (150.62642pt too wide) in paragraph at lines 244--246
+) [11] [12 <./graphs/sondovac_overview.pdf>] [13 <./graphs/sondovac_overview_pa
+rt_b.pdf>]
+[14]
+Overfull \hbox (150.62642pt too wide) in paragraph at lines 261--263
 \T1/cmr/m/n/12 hits were present, the pos-si-ble plas-tid se-quences are listed
  in the [][]\T1/cmtt/m/n/12 *[]\T1/cmr/m/n/12 _possible_cp_dna_gene_in_probe_se
 t.pslx
  []
 
-[13] [14]) (./practical_work.tex [15]
+[15] [16]) (./practical_work.tex [17]
 Chapter 4.
-[16
+[18
 
 ]
 Overfull \hbox (108.62154pt too wide) in paragraph at lines 52--54
@@ -767,9 +774,22 @@ Overfull \hbox (108.62154pt too wide) in paragraph at lines 52--54
 ww.arabidopsis.org/tools/bulk/sequences/.
  []
 
-[17] [18]) (./results.tex [19]
+[19]
+<graphs/selecting_probes.pdf, id=548, 939.51pt x 502.87875pt>
+File: graphs/selecting_probes.pdf Graphic file (type pdf)
+<use graphs/selecting_probes.pdf>
+Package pdftex.def Info: graphs/selecting_probes.pdf  used on input line 92.
+(pdftex.def)             Requested size: 441.01773pt x 236.05379pt.
+ [20 <./graphs/selecting_probes.pdf>]
+<graphs/probe_picker_workflow.pdf, id=563, 865.2325pt x 786.94pt>
+File: graphs/probe_picker_workflow.pdf Graphic file (type pdf)
+<use graphs/probe_picker_workflow.pdf>
+Package pdftex.def Info: graphs/probe_picker_workflow.pdf  used on input line 1
+42.
+(pdftex.def)             Requested size: 441.01773pt x 401.10594pt.
+ [21] [22 <./graphs/probe_picker_workflow.pdf>] [23]) (./results.tex [24]
 Chapter 5.
-) (./improvements.tex [20
+) (./improvements.tex [25
 
 ]
 Chapter 6.
@@ -777,7 +797,7 @@ Chapter 6.
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 7.
 
-) [21
+) [26
 
 ] (./main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 18--21
@@ -786,24 +806,24 @@ thub . com / listonlab / Hyb-[]Seq _
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 45--48
+Underfull \hbox (badness 1360) in paragraph at lines 49--52
 []\T1/cmr/m/n/12 bowtie.  Bowtie2.  []$\T1/cmtt/m/n/12 http : / / bowtie-[]bio 
 . sourceforge . net / bowtie2 / index .
  []
 
-[22
+[27
 
 
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 275.
- [23]
+ [28]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 275.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 275.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 275.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1F28E3367AFE2598B7ACEBBE4812A5E5;3088.
+(rerunfilecheck)             Checksum: D2B29C596786D08C1D3CEE230D205546;3028.
 
 
 LaTeX Warning: There were undefined references.
@@ -811,10 +831,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 275.
  ) 
 Here is how much of TeX's memory you used:
- 6300 strings out of 492985
- 88862 string characters out of 6138637
- 178472 words of memory out of 5000000
- 9608 multiletter control sequences out of 15000+600000
+ 6338 strings out of 492982
+ 89823 string characters out of 6138579
+ 179188 words of memory out of 5000000
+ 9635 multiletter control sequences out of 15000+600000
  16396 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,6n,28p,619b,572s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -831,10 +851,10 @@ r/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-d
 ist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf-dist/fonts/type1
 /public/cm-super/sfti1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
 r/sftt1200.pfb>
-Output written on main.pdf (34 pages, 450455 bytes).
+Output written on main.pdf (39 pages, 501164 bytes).
 PDF statistics:
- 651 PDF objects out of 1000 (max. 8388607)
- 574 compressed objects within 6 object streams
- 167 named destinations out of 1000 (max. 500000)
- 371 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 719 PDF objects out of 1000 (max. 8388607)
+ 624 compressed objects within 7 object streams
+ 176 named destinations out of 1000 (max. 500000)
+ 383 words of extra memory for PDF output out of 10000 (max. 10000000)
 
