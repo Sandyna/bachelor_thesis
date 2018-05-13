@@ -1,12 +1,12 @@
 lines = []
 #percentage = input("Enter the %: ")
 #openfile = open("last_metal_output_mock.fa", "r")
-openfile = open("gmelinii_nickel_genes_aligned.fa", "r")
+openfile = open("arabidopsis_gmelinii_aligned.fa", "r")
 inputLines = openfile.readlines()
 numberOfResults = 0
 i=0
 percentage = 90
-similarity = 90
+similarity = 60
 while percentage >= 10:
 	numberOfResults = 0
 	i=0
@@ -34,7 +34,7 @@ while percentage >= 10:
 #						print (score + " " + alignmentLength + " " + str(similarity))
 #						print ((int(sequenceLength) * percentage) / 100 <= int(alignmentLength))
 #						print (((int(score) * similarity) / 100 <= int(alignmentLength)))
-						if (int(sequenceLength) * percentage) / 100 <= int(alignmentLength) and (int(alignmentLength) * similarity) / 100 <= int(score): 
+						if int(alignmentLength) >= 120 and (int(alignmentLength) * similarity) / 100 <= int(score) and (int(sequenceLength) * percentage) / 100 <= int(alignmentLength): 
 #and (int(sequenceLengthFirst) * percentage) / 100 <= int(alignmentLengthFirst):
 							numberOfResults += 1
 							keep = True
@@ -55,7 +55,7 @@ while percentage >= 10:
 			i+=1
 
 
-	with open("result_gmelinii_nickel_genes_aligned.txt", "a") as myfile:
+	with open("result_arabidopsis_gmelinii_aligned.txt", "a") as myfile:
 		myfile.write(">")
 		myfile.write(str(percentage) + " " + str(similarity))
 		myfile.write(": ")
