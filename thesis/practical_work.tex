@@ -3,18 +3,18 @@
 
 In this chapter,  we will specify the data we are using, provide a biological background for them and describe the way in which they are processed. 
 We will describe the practical work and process of creating suitable probes. We will take a look at parameters and specifications we used during the 
-run of the Sondovac script. 
+run of the Sondovač script. 
 
 \section{Input data}
 In this chapter we will take a closer look at the data we are using. We will cover the biological aspect of 
 the data. %and compare the data we have to other kinds of data. 
 We will also look at how such data is obtained and how it is further processed. 
 
-Sondovac uses a transcriptome, a genome and possibly a chloroplast and mitochondrion. 
+Sondovač uses a transcriptome, a genome and possibly a chloroplast and mitochondrion. 
 We worked with two different sets of input data. These data shared most of the files, differing only in genome. 
 %Add some statistics here. #of genes, etc.
 
-The first set used the following data: 
+First set used the following data: 
 
 \begin{enumerate}
 \item Transcriptome: Alyssum alyssoides
@@ -23,7 +23,7 @@ The first set used the following data:
 \item Chloroplast: Arabidopsis thaliana
 \end{enumerate}
 
-The second set used the following data: 
+Second set used the following data: 
 
 \begin{enumerate}
 \item Transcriptome: Alyssum alyssoides
@@ -33,8 +33,8 @@ The second set used the following data:
 \end{enumerate}
 
 \subsection{Nickel and metallic genes}
-We were especially interested in nickel and metallic genes that might be present in these genomes. Therefore, we matched the possible 
-probes against nickel and metallic genes and primarily picked those with the greatest similarity. 
+We were especially interested in genes that bind nickel and metal that might be present in these genomes. Therefore, we matched the possible 
+probes against nickel and metallic reference and primarily picked those with the greatest similarity. 
 
 %Where do these data come from? Add some statistics
 %Maybe move this into the practical part
@@ -52,13 +52,13 @@ another company after sending them the basic plant material.
 The nickel and metallic genes are from the web page https://www.arabidopsis.org/tools/bulk/sequences/. The used dataset was AGI transcripts and AGI coding sequences. 
 It was searched against sequences for all gene models/splice forms. 
 
-\section{Autometed selection of probes}
+\section{Selection of probes}
 
 %Definition of the problem goes here
 When making probes, we usually want to get exact number of bases, because the created probes are later passed to another 
-company, such as MYcroarray (USA) \cite{mycroarray} that will create the actual physical probes from them. These companies 
+company, such as MYcroarray (USA) \cite{mycroarray} that will create the actual probes from them. These companies 
 usually charge for processing of a precise number of bases. To save money, it is best to fill this number to the brim. 
-Therefore, when we have several sequences available, we want to select such sequences, that the sum of thei lenghts makes the 
+Therefore, when we have several sequences available, we want to select such sequences, that the sum of their lenghts makes the 
 highest number possible, but does not exceed the given limit, let us say $1,000,000$ of base pairs. 
 
 Aside from this, we often have other requirements on the selected sequences, usually based on biological evidence. There might be 
@@ -76,11 +76,12 @@ From this file, we will select the required genes. Any additional probes will be
 
 
 \section{Process overview}
-After several tries, it was estabilished that we will make probes from two sets of data to cover broader spectrum of plants they can 
-be used for. We ran the Sondovac script for each set and got two resulting sets of possible probes. From these possible probes, we 
+After several tries, it was estabilished that we will make probes from two sets of datas to cover broader spectrum of plants they can 
+be used for. We ran the Sondovač script for each set and got two resulting sets of possible probes. From these possible probes, we 
 proceeded to pick those that fit the criteria the best. Consecutively, the probes have to make up to $1,000,000$ base pairs, due to 
 restrictions of the probe-making company. 
-To pick suitable probes, we matched each data set to nickel and metal genes and chose those that aligned with them. We matched the 
+
+To pick suitable probes, we matched each data set to nickel and metal reference and chose those that aligned with them. We matched the 
 data sets against each other and picked probes by similarity. We chose only one of the probes that matched. The other one 
 wasn't included in the final probes to avoid duplicates. Finally, the rest was picked so they would make up the $1,000,000$ bases to 
 make the most of the space. 
@@ -97,10 +98,10 @@ make the most of the space.
 
 
 \section{Using the pipeline}
-The possible probes were produced by running the script Sondovac on two different data sets. We then picked suitable probes from 
+The possible probes were produced by running the script Sondovač on two different data sets. We then picked suitable probes from 
 the resulting probes. 
 
-%Sondovac parameters
+%Sondovač parameters
 We set the minimal total locus length on $360$ for both datasets - the least possible minimal total locus length - so we could get 
 the largest amount of possible probes to pick from. 
 
@@ -125,7 +126,7 @@ its name using an array.
 
 Then, the script puts sequences to keep and sequences to remove into a dictionary, creating a set for each data. 
 Finally, the actual selection ensues. 
-First, the probe is picked if it isn't in the sequences to remove. If it's also in the sequences to keep, it is automatically put into the output. 
+First, the probe is picked if it is not present in the sequences to remove. If it's also in the sequences to keep, it is automatically put into the output. 
 If the sequence isn't amongst the sequences to remove and it isn't amongst the sequences to keep either, it's saved for later processing; for when we are 
 picking sequences in order or picking them so they make up to the target number of bases. 
 
@@ -145,19 +146,46 @@ number.
 \end{figure}
 
 
-\subsection{Knapsack problem and dynamic programming}
+\subsection{Knapsack problem, subset sum problem and dynamic programming}
 %Write about knapsack problem
-The knapsack problem is a well known problem in combinatorial optimalisation. The problem goes as follows: If we are given a knapsack with a weight limit and a 
+The knapsack problem is a well known problem in combinatorial optimalisation, complexity theory and cryptography. The problem goes as follows: If we are given a knapsack with a weight limit and a 
 set of items where each has a value and weight, what is the biggest possible value we can pack into the knapsack while the total weight of items is less or equal to 
 the knapsack's limit. 
-%How does this apply to our problem
-The Probe Picker presents us with a problem, where we have $n$ numbers to choose from and a limit $l$ that we mustn't overstep. This is a variation of the knapsack problem, 
-where the value of each item is equal to its length, or rather, the number of bases it consists of. As a result, we want a list of bases that make the most of the possible space; 
-we want to fill the "knapsack" as precisely as possible without overstepping the limit. 
-%Definition of informatic problem
-The original version of 
-%Theory, solution, and stuff. Why we can make it quick by dynamic programming
 
+The subset sum problem is a similar problem, that can be considered a special case of the knapsack problem. The subset sum problem goes like this: If we are given a set or multiset 
+of integers, can we find a non-empty subset of these integers, whose sum is zero? An equivalent problem, closer to what we need, is that we must meet a certain sum instead of a sum of 
+zero. 
+
+%How does this apply to our problem
+The Probe Picker presents us with a problem, where we have $n$ integers to choose from and a limit $l$ that we mustn't overstep. This is a variation of the subset sum problem, 
+where length of a sequence, or rather, the number of bases it consists of, can be considered an integer in the initial multiset. As a result, we want a list of sequences that make the 
+most of the possible space; we want to fill the "knapsack" as precisely as possible without overstepping the limit. 
+%Definition of informatic problem
+
+The original version of the subset sum is NP complete, which means that we can easily (in polynomial time) confirm, that the solution is valid, but it may be difficult to determine whether a 
+solutions exists at all. 
+
+The problem we have is an optiomalisation variation of the subset sum problem. Since subset sum problem is NP complete, the problem we have is NP hard. This means... 
+
+%Theory, solution, and stuff. Why we can make it quick by dynamic programming
+However, there is a quicker pseudopolynomial solution for our problem. We can go with an approach that uses dynamic programming. 
+Dynamic programming is about breaking a complex problem into simpler subproblems and solving each of the subproblems only once. From these partial results we can build the final answer. 
+Our problem is finding a subset of sequences whose sum of lengths is the closest possible number to $1,000,000$ and as an input, we have a number of bases (remainging bases we didn't fill up by the greedy 
+approach) we need to fill with probes and a list of probes and their lengths. 
+The definition of a subproblem we are facing goes as follows: 
+For a given sum $s$ and the first $k$ sequences, can the sum be achieved by adding up a subset of these sequences's lengths? 
+%Pre danú dĺžku a prvých k sekvencií, či sa dá dosiahnuť. A odkiaľ sme prišli
+We can solve this subproblem by using a result from another subproblem that we have already solved. 
+Let's say we are looking at a specific sequence $k$ with length $l$ and a specific sum $s$. We want to decide whether we might want the sequence $k$ in our result or not. 
+
+%vezmem/nevezmem
+If we want it, then how can we achieve 
+the sum $s$ while also using the sequence $k$? We will take a look at another sum, let's call it $s_{previous}$. This sum $s_{previous}$ is equal to $s - l$. Since lengths of sequences are positive integers, $s_{previous}$ will be 
+smaller than $s$ and therefore already solved (or we can recursively go take a look at the $s_{previous}$ and solve the subproblem for this sum and a sequence $k-1$. 
+
+In the case we don't want the sequence, we will exclude the sequence $k$ and try to solve the subproblem for the same sum $s$ and a sequence $k-1$. 
+
+I WILL ADD MORE LATER. 
 
 \subsection{Picking the genes to keep and remove}
 
@@ -177,6 +205,7 @@ These lists are then filtered using a Python script to pick those, that meet the
 In the case of the probes aligned with metal and nickel reference, it was required for at least 90\% of the probe to fit into the reference sequence and this part had to have at least 90\% similarity. 
 The Python script determined the similarity based on ration of achieved score and the maximal possible score. If at least 90\% of the probe fit into the reference was determined on ration of the alignment lenght 
 and probe length. 
+
 Another Python script was created to filter the aligned Odontarrhena tortuosa and Alyssum gmelinii genome probes. In this case, the requirements were that the similarity had to be at least 90\% and the length of the probe had to be at least 120 bp. Later, the requirement on similarity was changed to $\geq$ 80\% due to low number of aligned probes. 
 
 We coded additional script that creates the list of probes we want to have in the result and those we want to remove from these aligned sequences. 
@@ -184,4 +213,8 @@ This script takes the list of names of aligned probes that meet the requirements
 probes with best score are the ones that are taken first. 
 
 The script takes probes from this list in order and for each probe, it puts this probe (both sequence and name) into the final list of probes we want to keep. Then it puts the probe it aligned with or any other 
-similar probes and puts these into the list of probes we want to remove. This is done to avoid having duplicates or sequences that are too similar to each other amongst the probes. If 
+similar probes into the list of probes we want to remove. This is done to avoid having duplicates or sequences that are too similar to each other amongst the probes. 
+
+After the list of probes to keep and list of probes to remove are created, these files are used as an input in the Probe Picker script that picks the final probes. 
+
+

@@ -3,12 +3,6 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: literatura.bib
-Warning--I didn't find a database entry for "a"
-Warning--I didn't find a database entry for "b"
-Warning--I didn't find a database entry for "w"
-Warning--I didn't find a database entry for "d"
-Warning--I didn't find a database entry for "z"
-Warning--I didn't find a database entry for "s"
 Warning--to sort, need author or key in geneious
 Warning--to sort, need author or key in cd-hit
 Warning--to sort, need author or key in flash
@@ -16,45 +10,45 @@ Warning--to sort, need author or key in grabsingletonclusters
 Warning--to sort, need author or key in samtools
 Warning--to sort, need author or key in mycroarray
 Warning--to sort, need author or key in last
-You've used 21 entries,
+You've used 22 entries,
             2118 wiz_defined-function locations,
-            612 strings with 7014 characters,
-and the built_in function-call counts, 5669 in all, are:
-= -- 522
-> -- 262
-< -- 0
-+ -- 109
-- -- 88
-* -- 374
-:= -- 900
-add.period$ -- 56
-call.type$ -- 21
-change.case$ -- 107
+            614 strings with 7195 characters,
+and the built_in function-call counts, 6085 in all, are:
+= -- 558
+> -- 295
+< -- 1
++ -- 122
+- -- 100
+* -- 415
+:= -- 973
+add.period$ -- 60
+call.type$ -- 22
+change.case$ -- 116
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 183
-empty$ -- 509
-format.name$ -- 88
-if$ -- 1188
+cite$ -- 29
+duplicate$ -- 196
+empty$ -- 532
+format.name$ -- 100
+if$ -- 1269
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 9
-newline$ -- 102
-num.names$ -- 28
-pop$ -- 180
+int.to.str$ -- 22
+missing$ -- 11
+newline$ -- 108
+num.names$ -- 30
+pop$ -- 189
 preamble$ -- 2
-purify$ -- 86
+purify$ -- 94
 quote$ -- 0
-skip$ -- 134
+skip$ -- 140
 stack$ -- 0
-substring$ -- 299
-swap$ -- 21
-text.length$ -- 0
+substring$ -- 304
+swap$ -- 24
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 84
+type$ -- 86
 warning$ -- 7
-while$ -- 42
-width$ -- 23
-write$ -- 196
-(There were 13 warnings)
+while$ -- 44
+width$ -- 24
+write$ -- 211
+(There were 7 warnings)

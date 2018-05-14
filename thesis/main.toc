@@ -1,3 +1,4 @@
+\babel@toc {slovak}{}
 \contentsline {chapter}{Introduction}{1}{chapter*.8}
 \contentsline {chapter}{\numberline {1}Biological motivation}{3}{chapter.1}
 \contentsline {section}{\numberline {1.1}Terminology overview, basic terms and concepts}{3}{section.1.1}
@@ -10,35 +11,38 @@
 \contentsline {section}{\numberline {2.2}Hyb-Seq Protocol}{5}{section.2.2}
 \contentsline {section}{\numberline {2.3}Orthologous genes}{6}{section.2.3}
 \contentsline {section}{\numberline {2.4}Low-copy nuclear genes}{6}{section.2.4}
-\contentsline {chapter}{\numberline {3}Existing work - Sondovac}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}Sondovac origins}{7}{section.3.1}
+\contentsline {chapter}{\numberline {3}Existing work - Sondova\IeC {\v c}}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Sondova\IeC {\v c} origins}{7}{section.3.1}
 \contentsline {section}{\numberline {3.2}The workflow overview}{7}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Sondovac part a}{7}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}The input and output data}{7}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Input data for part a}{7}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.1}Sondova\IeC {\v c} part a}{8}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}The input and output data}{8}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Input data for part a}{8}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Input data for part b}{8}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}Workflow, pipeline}{8}{section.3.3}
+\contentsline {section}{\numberline {3.3}Workflow, pipeline}{9}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Geneious}{10}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Sondovac part b}{10}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.2}Sondova\IeC {\v c} part b}{10}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Additional removal of plastid sequences}{11}{subsection.3.3.3}
 \contentsline {section}{\numberline {3.4}Output data}{11}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Output data - part a}{11}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Output data - Geneious}{14}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Output data - part b}{14}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.3}Output data - part b}{15}{subsection.3.4.3}
 \contentsline {section}{\numberline {3.5}Used software and tools}{15}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Programming languages}{15}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.1}Programming languages}{16}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Tools and software}{16}{subsection.3.5.2}
-\contentsline {section}{\numberline {3.6}Use of Sondovac}{17}{section.3.6}
-\contentsline {chapter}{\numberline {4}Practical work and results}{18}{chapter.4}
-\contentsline {section}{\numberline {4.1}Input data}{18}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Nickel and metallic genes}{19}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}What kind of data we are using}{19}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Autometed selection of probes}{19}{section.4.2}
-\contentsline {section}{\numberline {4.3}Process overview}{20}{section.4.3}
-\contentsline {section}{\numberline {4.4}Using the pipeline}{20}{section.4.4}
-\contentsline {section}{\numberline {4.5}Probe picker}{21}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Knapsack problem and dynamic programming}{21}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Picking the genes to keep and remove}{23}{subsection.4.5.2}
-\contentsline {chapter}{\numberline {5}Results}{25}{chapter.5}
-\contentsline {chapter}{\numberline {6}Possible Improvements}{26}{chapter.6}
-\contentsline {subsection}{\numberline {6.0.1}Full automatization}{26}{subsection.6.0.1}
+\contentsline {section}{\numberline {3.6}Use of Sondova\IeC {\v c}}{18}{section.3.6}
+\contentsline {chapter}{\numberline {4}Practical work and results}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Input data}{19}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Nickel and metallic genes}{20}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}What kind of data we are using}{20}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Selection of probes}{20}{section.4.2}
+\contentsline {section}{\numberline {4.3}Process overview}{21}{section.4.3}
+\contentsline {section}{\numberline {4.4}Using the pipeline}{21}{section.4.4}
+\contentsline {section}{\numberline {4.5}Probe picker}{22}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Knapsack problem, subset sum problem and dynamic programming}{22}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Picking the genes to keep and remove}{25}{subsection.4.5.2}
+\contentsline {chapter}{\numberline {5}Results}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}Partial results}{27}{section.5.1}
+\contentsline {section}{\numberline {5.2}Final probes}{27}{section.5.2}
+\contentsline {chapter}{\numberline {6}Possible Improvements}{28}{chapter.6}
+\contentsline {subsection}{\numberline {6.0.1}Full automatization}{28}{subsection.6.0.1}
+\contentsline {subsection}{\numberline {6.0.2}Incorporating the script we coded into the Sondova\IeC {\v c} pipeline}{28}{subsection.6.0.2}

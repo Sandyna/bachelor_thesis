@@ -2,40 +2,40 @@
 \label{kap:hyb_seq}
 
 In this chapter we will describe in detail the Hyb-Seq Protocol and next generation sequencing. We will address their position in the process of creating a phylogenetic tree and their connection 
-to the Sondovac. 
+to the Sondovač. 
 
 \section{Next generation sequencing}
-Next generation sequencing reffers to faster and cheaper approaches to sequencing and acquiring phylogenetic information. The effectiveness of NGS is due to using better technology - sequencing platforms 
+Next generation sequencing refers to faster and cheaper approaches to sequencing and acquiring phylogenetic information. The effectiveness of NGS is due to using better technology - sequencing platforms 
 such as Illumina, Roche 454 sequencer and others, which can sequence many shorter sequences at the same time. The process where the sequences from diffent individuals are sequenced subsequently is known as pooling. 
 %https://www.nature.com/articles/srep33735
-\cite anand2016next
+\cite {anand2016next}
 %Aside from faster sequencing platforms, NGS relies on not having to sequence all of the genetic information. Regions of interest can be picked from the sequence and only those are to be processed. 
 When sequencing a whole genome, it's divided into small fragments which are then sequenced subsequently. Several copies of genome are used and thus each base is sequenced multiple times; often in a different fragment. The resulting data is then put together using bioinformatics analyses. 
 %https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3841808/
-\cite behjati2013next
+\cite {behjati2013next}
 
 \section{Hyb-Seq Protocol}
 Hyb-seq protocol is the combination of target enrichment and genome skimming. It enables data collection for low-copy nuclear genes and high-copy genomic targets for 
 evolution studies and plant systematics. In hyb-seq, suitable probes are first created to serve in target enrichment. The principle of target enrichment is selectively finding regions of interest in a genome before sequencing and only processing those, thus making the following sequencing process more effective. 
-\cite weitemier2014hyb
+\cite {weitemier2014hyb}
 
-Genome skimming refers to shallow sequencing approaches that aim to find conversed ortholog sequences. The data for Sondovac thesis was acquired by using genome skimming and thus getting paired-end genome data. 
-\cite denver2016genome
+Genome skimming refers to shallow sequencing approaches that aim to find conversed ortholog sequences. The data for Sondovač thesis was acquired by using genome skimming and thus getting paired-end genome data. 
+\cite {denver2016genome}
 %Maybe write about different methods somewhere?
 From the sequenced data, a phylogenetic tree can be built. 
-The script Sondovac, we are using in this thesis, is a tool that selects orthologous low-copy nuclear genes from provided data. The goal is to find effective markers to use in target enrichment. 
-
+The script Sondovač, we are using in this thesis, is a tool that selects orthologous low-copy nuclear genes from provided data. The goal is to find effective markers to use in target enrichment. 
+\cite {sondovac}
 
 \section{Orthologous genes}
 Orthologous genes are fundamental for phylogeny, since they can be used as markers. Selecting orthologous genes that are effective as markers 
-is difficult as gene duplication and deletion is making it hard to tell orthologs from paralogs. Single-copy paralogs that has 
-undergone lineage-specific changes can be mistaken for orhologs. 
+is difficult as gene duplication and deletion is making it hard to tell orthologs from paralogs. Single-copy paralogs that have 
+undergone lineage-specific changes can be mistaken for orthologs. 
 %(Philippe et al. 2005)
-\cite wang2014identification
+\cite {wang2014identification}
 Distinguishing orthologs from paralogs is especially difficult in angiosperms, where polyploidization is a common occurence. 
 %(Zhang, 2003; Kellis et al., 2004; Dehal & Boore, 2005; Soltis et al., 2009; Zhou et al., 2010)
 %Detecting orthologs? (Tatusov et al. 2003).
-\cite zhang2012highly
+\cite {zhang2012highly}
 
 \section{Low-copy nuclear genes}
 %What are lCNs
@@ -44,18 +44,18 @@ Low-copy nuclear genes are genes from nucleus that can be found in the genome in
 Highly conserved orthologous low-copy nuclear genes have found their use as a source of phylogenetic information. They proved to be effective markers to 
 track organismal evolution. 
 %zang
-\cite zhang2012highly
+\cite {zhang2012highly}
 %Why nuclear
 Most of the protein-coding cell genes can be found in nucleus. Compared to genes from other organelles, nuclear genes from eukaryotic organisms consist 
 from several chromosomes. Because of this, genes of eucaryotic organisms are evolutionary unlinked; either on different chromosomes or sufficiently far apart. 
 %wang
-\cite wang2014identification
+\cite {wang2014identification}
 
 %How are they related to HybSeq
 Finding low-copy nuclear genes has been constrained by technical limitations. High sequencing throughput of current platforms, such as Illumina, combined with 
 target enrichment enables us to sequence large amounts of low-copy nuclear loci effectively. 
 %Hyb-Seq: Combining target enrichment and genome skimming for plant phylogenomics1
-\cite sang2002utility
+\cite {sang2002utility}
 
 %If I don't have enough
 %\section{Other next generation sequencing approaches}

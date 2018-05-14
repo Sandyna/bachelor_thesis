@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Arch Linux)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+Database file #1: literatura.bib
+Warning--I didn't find a database entry for "a"
+Warning--I didn't find a database entry for "b"
+Warning--I didn't find a database entry for "w"
+Warning--I didn't find a database entry for "d"
+Warning--I didn't find a database entry for "z"
+Warning--I didn't find a database entry for "s"
+Warning--to sort, need author or key in geneious
+Warning--to sort, need author or key in cd-hit
+Warning--to sort, need author or key in flash
+Warning--to sort, need author or key in grabsingletonclusters
+Warning--to sort, need author or key in samtools
+Warning--to sort, need author or key in mycroarray
+Warning--to sort, need author or key in last
+You've used 21 entries,
+            2118 wiz_defined-function locations,
+            612 strings with 7014 characters,
+and the built_in function-call counts, 5669 in all, are:
+= -- 522
+> -- 262
+< -- 0
++ -- 109
+- -- 88
+* -- 374
+:= -- 900
+add.period$ -- 56
+call.type$ -- 21
+change.case$ -- 107
+chr.to.int$ -- 0
+cite$ -- 28
+duplicate$ -- 183
+empty$ -- 509
+format.name$ -- 88
+if$ -- 1188
+int.to.chr$ -- 0
+int.to.str$ -- 21
+missing$ -- 9
+newline$ -- 102
+num.names$ -- 28
+pop$ -- 180
+preamble$ -- 2
+purify$ -- 86
+quote$ -- 0
+skip$ -- 134
+stack$ -- 0
+substring$ -- 299
+swap$ -- 21
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 84
+warning$ -- 7
+while$ -- 42
+width$ -- 23
+write$ -- 196
+(There were 13 warnings)

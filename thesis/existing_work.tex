@@ -1,57 +1,68 @@
-\chapter[Existing work - Sondovac]{Existing work - Sondovac}
+\chapter[Existing work - Sondovač]{Existing work - Sondovač}
 \label{kap:existing_work}
 
-In this chapter, we will take a closer look at the pipeline and the workflow of Sondovac. We 
+In this chapter, we will take a closer look at the pipeline and the workflow of Sondovač. We 
 will also specify the input and output data format and consider them from the informatic and 
 more formal point of view. Finally, detailed description of the tools and software that are used by 
-Sondovac will be listed. 
+Sondovač will be listed. 
 
-\section{Sondovac origins}
+\section{Sondovač origins}
 
-Sondovac is a Czech neologism standing for "Probe-maker". It was created by Roswitha Smickl. 
-Sondovac is an interactive and automated script to create orthologous low-copy nuclear 
+Sondovač is a Czech neologism standing for "Probe-maker". It was created by Roswitha Schmickl, 
+Aaron Liston, Vojtěch Zeisek and others. 
+Sondovač is an interactive and automated script to create orthologous low-copy nuclear 
 probes for further use by the Hyb-Seq protocol. It uses transcriptome and genome skim data. 
-Sondovac does not require strong bioinformatic skills nor high-performance computer. It is 
+Sondovač does not require strong bioinformatic skills nor high-performance computer. It is 
 intended for either Linux or Mac OS X. 
 
 \section{The workflow overview}
 
-Sondovac is written in BASH, an Unix shell and a command language \cite{bash}. It has three 
-parts: sondovac\_part\_a.sh, the geneious \cite{geneious} intermediate part and sondovac\_part\_b.sh. Between 
-the parts a and b of Sondovac it is necessary to manualy input the output from the part a into 
+Sondovač is written in BASH, an Unix shell and a command language \cite{bash}. It has three 
+parts: Sondovač\_part\_a.sh, the Geneious \cite{geneious} intermediate part and Sondovač\_part\_b.sh. Between 
+the parts a and b of Sondovač it is necessary to manualy input the output from the part a into 
 another software - Geneious, for data processing and then run the part b on the output from the software. 
 
 
-\subsection{Sondovac part a}%Don't forget we already know here what type of data we have. No we don't
+\subsection{Sondovač part a}%Don't forget we already know here what type of data we have. No we don't
 
 \subsection{The input and output data}
 
 \subsection{Input data for part a}
-Input data for part a of Sondovac consist of 5 file, 1 of them being optional. 
+Input data for part a of Sondovač consist of 5 files, 1 of them being optional. 
 \begin{enumerate}
 \item Transcriptome input file in FASTA format
+
 The file consists of several blocks with same format: On the first line of a block there is a '>' character followed 
-with a unique description of the sequence, in this case a number. On the next few lines, there is the actual sequence 
+by an unique description of the sequence, in this case a number. On the next few lines, there is the actual sequence 
 composed of 'A', 'C', 'G' or 'T' characters. 
 \item Plastome reference sequence input file in FASTA format
+
 This file is used in both parts. It consists of a single long sequence and the starting line with '>' and the sequence's 
 unique description. 
+
 \item Mitochondriome reference sequence input file in FASTA format (Optional)
+
 The file contains a single sequence along with the first line describing it. It is optional, because the size of a plant
 mitochondrial genome can vary greatly and have high rearrangement rates. 
+
 \item Paired-end genome skim input file in FASTQ format (first file, the forward reads)
+
 \item Paired-end genome skim input file in FASTQ format (second file, the reverse reads)
 
-Other than the input files, Sondovac requires a minimum total locus length to be set. 
+Other than the input files, Sondovač requires a minimum total locus length to be set. 
 
 Output data from part a are the input files for Geneious. 
 
 \subsection{Input data for part b}
-Input data for part b of Sondovac consist of 3 files and include the output data from Geneious. 
+Input data for part b of Sondovač consist of 3 files and include the output data from Geneious. 
 \begin{enumerate}
+
 \item Input file in TSV format (output of Geneious assembly)
+
 \item Input file in FASTA format (output of Geneious assembly)
+
 \item Plastome reference sequence input file in FASTA format
+
 This file is used in both parts. It consists of a single long sequence and the starting line with '>' and the sequence's 
 unique description. 
 \end{enumerate}
@@ -64,7 +75,7 @@ The part a of the script covers 6 steps:
 \begin{enumerate}
 \item Removing the transcripts that share $\geq$ 90\% sequence similarity
 
-We want to get low-copy nuclear orthologous probes. To minimize the enrichment of multi-copy loci, the Sondovac script removes transcripts that 
+We want to get low-copy nuclear orthologous probes. To minimize the enrichment of multi-copy loci, the Sondovač script removes transcripts that 
 are too similar; share $\geq$ 90\% sequence similarity. This is done using BLAT and UNIX commands. From this we get unique transcripts that we match against processed reads. 
 
 \item Removing the reads of plastid origin
@@ -81,10 +92,10 @@ used.
 
 Subsequently, the paired-end reads without plastid and mitochondrial reads are combined using FLASH. 
 
-\item Matching the the unique transcripts and the filtered, combined genome skim reads sharing $\geq$ 85\% sequence similarity. 
+\item Matching the unique transcripts and the filtered, combined genome skim reads sharing $\geq$ 85\% sequence similarity. 
 
 Sequences that are well-preserved and therefore present amongst several related species make good genetic markers. Since transcripts are 
-the sequences that are translated into proteins, they rarely change their genetic composition, eg. the bases they consist of. The Sondovac 
+the sequences that are translated into proteins, they rarely change their genetic composition, eg. the bases they consist of. The Sondovač 
 script matches the unique transcripts with the processed paired-end genome skim data. Using BLAT and Unix commands, only sequences that have 
 $\geq$ 85\% similarity are kept.  
 
@@ -113,11 +124,11 @@ Hits that contain masked nucleotides (nucleotides that are unknown or have vario
 \subsection{Geneious}
 
 After filtering the BLAST output, de novo assembly of BLAT hits into larger contigs commences. This part is done by Geneious, a desktop software platform 
-that can analyze, asslemble or align sequences. The user has to take output of Sondovac part a and manually process the data with Geneious using the medium 
+that can analyze, asslemble or align sequences. The user has to take output of Sondovač part a and manually process the data with Geneious using the medium 
 sensitivity / fast setting. 
 
-\subsection{Sondovac part b}
-Sondovac part b covers 4 steps. The output data from Geneious assembly and the plastome reference are the input files for part b. 
+\subsection{Sondovač part b}
+Sondovač part b covers 4 steps. The output data from Geneious assembly and the plastome reference are the input files for part b. 
   
 \begin{enumerate}
 \item Retention of those contigs that comprise exons greater or equal than bait length and have a certain total locus length
@@ -143,7 +154,7 @@ only sequences that have similarity $\geq$ 90\% are removed.
 
 \subsection{Additional removal of plastid sequences}
 
-If any remaining plastid sequences are detected, they have to be removed manually from the final output of part b of Sondovac script, since we preffer nuclear probes and 
+If any remaining plastid sequences are detected, they have to be removed manually from the final output of part b of Sondovač script, since we preffer nuclear probes and 
 plastid genes would occupy too much space on the Illumina lane during target enrichment. 
 
 \end{enumerate}
@@ -152,7 +163,7 @@ plastid genes would occupy too much space on the Illumina lane during target enr
 \centerline{
 	\includegraphics[width=1\textwidth]{graphs/sondovac_overview}
 }
-\caption[Sondovac pipeline workflow]{Flowchart illustrating the workflow of Sondovac script, part a and step with the Geneious software.}
+\caption[Sondovač pipeline workflow]{Flowchart illustrating the workflow of Sondovač script, part a and step with the Geneious software.}
 \label{obr:workflowa}
 \end{figure}
 
@@ -160,20 +171,20 @@ plastid genes would occupy too much space on the Illumina lane during target enr
 \centerline{
 	\includegraphics[width=1\textwidth]{graphs/sondovac_overview_part_b}
 }
-\caption[Sondovac pipeline workflow -- part b]{Flowchart illustrating the workflow of Sondovac script, part b.}
+\caption[Sondovač pipeline workflow -- part b]{Flowchart illustrating the workflow of Sondovač script, part b.}
 \label{obr:workflowb}
 \end{figure}
 
 
 \section{Output data}
-Each part of the Sondovac pipeline has its own output data. Some of them are further used in the pipeline and other files are purely for user. In this section, we will 
-take a look at the output data from various parts of the Sondovac script. 
+Each part of the Sondovač pipeline has its own output data. Some of them are further used in the pipeline and other files are purely for user. In this section, we will 
+take a look at the output data from various parts of the Sondovač script. 
 An asterisk (\verb_*_) in the name of file indicates the part of the file name that is specified by the user with the '-o' flag. Default value is 'output'. 
 
 \subsection{Output data - part a}
 
 Only the last file is necessary for further processing as the input for Geneious. However, other files may be useful for the user. 
-Sondovac, part a, creates the following files: 
+Sondovač, part a, creates the following files: 
 
 \begin{enumerate}
 
@@ -223,7 +234,7 @@ Final sequences for further use in Geneious. This is a FASTA file and the only f
 
 \subsection{Output data - Geneious}
 
-The output data from Geneious is the input data for the Sondovac script, part b, along with the plastome reference. 
+The output data from Geneious is the input data for the Sondovač script, part b, along with the plastome reference. 
 Geneious output consists of two files: 
 \begin{enumerate}
 \item Assembled sequences from Geneious - a file exported in TSV format
@@ -232,7 +243,7 @@ Geneious output consists of two files:
 
 \subsection{Output data - part b}
 
-The Sondovac script, part b creates the following files: 
+The Sondovač script, part b creates the following files: 
 
 \begin{enumerate}
 \item \verb_*_\_prelim\_probe\_seq.fasta
@@ -273,12 +284,12 @@ The final list of probes in FASTA format.
 
 
 \section{Used software and tools}
-Sondovac uses a broad variety of tools and scientific software packages, both freeware and payware. It is mainly coded in BASH, but it also uses smaller python 
-scripts. We will take a closer look at what each of the tools is and what does it do in the Sondovac script. 
+Sondovač uses a broad variety of tools and scientific software packages, both freeware and payware. It is mainly coded in BASH, but it also uses smaller python 
+scripts. We will take a closer look at what each of the tools is and what it does in the Sondovač script. 
 
 \subsection{Programming languages}
-Here we will take a look at programming languages the Sondovac script uses. 
-%What it is, what it is used for, citation, what part does it play in Sondovac
+Here we will take a look at programming languages the Sondovač script uses. 
+%What it is, what it is used for, citation, what part does it play in Sondovač
 
 \begin{enumerate}
 \item BASH
@@ -286,20 +297,20 @@ Here we will take a look at programming languages the Sondovac script uses.
 BASH is a command line interpreter (or shell) and a command language for Unix. It's a programming scripting language accessible through a terminal in 
 any Unix-based operating system. It is a free software. Scripts written in BASH usually have the extension \verb_*_.sh. 
 
-The Sondovac script is written in BASH. Using this language, it runs other programms and scripts. It is also used to work with files or manipulate and filter the data. 
+The Sondovač script is written in BASH. Using this language, it runs other programms and scripts. It is also used to work with files or manipulate and filter the data. 
 
 \item Python
 
 Python is an interpreted programming language. 
-Several scripts that Sondovac uses are coded in Python. 
+Several scripts that Sondovač uses are coded in Python. 
 
 \end{enumerate}
 
 \subsection{Tools and software}
 
-In this section, we will list the most inportant tools and software that Sondovac uses. Some of the software changed or was replaced with a newer version of Sondovac, 
-but the tools and software listed here comprise are essential part of Sondovac. 
-Sondovac uses the following software: 
+In this section, we will list the most inportant tools and software that Sondovač uses. Some of the software changed or was replaced with a newer version of Sondovač, 
+but the tools and software listed here comprise are essential part of Sondovač. 
+Sondovač uses the following software: 
 
 \begin{enumerate}
 
@@ -310,7 +321,7 @@ Sondovac uses the following software:
 \item BLAT
 
 BLAT -- the BLAST like alignment tool -- is a pairwise sequence alignment algorithm. \cite{kent2002blat}
-It is used by the Sondovac script to match reads to unique transcripts and for other alignments. It is used 
+It is used by the Sondovač script to match reads to unique transcripts and for other alignments. It is used 
 in both parts of the script. 
 
 \item Bowtie2
@@ -318,13 +329,13 @@ in both parts of the script.
 Bowtie2 is a memory-efficient tool used for aligning sequencing reads to longer reference sequences. It keeps an FM index to save memory. Bowtie2 has 
 local, gaped and paired-end alignment modes. \cite{bowtie2}
 %We used Bowtie2 for aligning the sequences we need to keep to the sequences we have. 
-It is used in Sondovac, part a to find plastome or mitochondrione sequences in the genome. 
+It is used in Sondovač, part a to find plastome or mitochondrione sequences in the genome. 
 
 \item CD-HIT
 
 CD-HIT is a program for clustering and comparing protein or nucleotide sequences. It can compare two databases and identify sequences that 
 are similar above a threshold. \cite{cd-hit}
-It is used in Sondovac, part b, to remove sequences that share similarity above 90\%. 
+It is used in Sondovač, part b, to remove sequences that share similarity above 90\%. 
 
 %\item FASTX toolkit
 %Was removed in 6.1, replaced by shell function
@@ -337,16 +348,16 @@ FLASH -- Fast Length Adjustment of SHort --- is an accurate and fast tool to com
 on fragments that are shorter than twice the length of reads. The longer the reads, the better the result of assembly. 
 \cite{flash}
 
-It is used in Sondovac, part a to combine paired-end reads. 
+It is used in Sondovač, part a to combine paired-end reads. 
 %G++, GCC ??
 
 \item Geneious
 
 Geneious is a payware software that can be used for organizing, analyzing, assembling or aligning DNA. It can run in interactive or non-interactive mode. 
 
-Geneious is an intermediate step between Sondovac part a and part b. It requires the data to be put in it manually. It is used for de novo assembly 
+Geneious is an intermediate step between Sondovač part a and part b. It requires the data to be put in it manually. It is used for de novo assembly 
 of the genome or transcript skim BLAT hits. It creates larger contigs from the data. 
-There are plans to replace the part that Geneious does by another free open-source command line tool and thus make the Sondovac pipeline fully automated. 
+There are plans to replace the part that Geneious does by another free open-source command line tool and thus make the Sondovač pipeline fully automated. 
 
 %GNU core utils
 %In a new version
@@ -355,7 +366,7 @@ There are plans to replace the part that Geneious does by another free open-sour
 
 Grab\_singleton\_clusters.py is a python script designed in the paper "K. Weitemier, S.C.K. Straub, R. Cronn, M. Fishbein, A. McDonnell, R. Schmickl, and A. Liston. 2014. Hyb-Seq: Combining target enrichment and genome skimming for plant phylogenomics Applications in Plant Sciences 2(9): 1400042" \cite{weitemier2014hyb}. It finds clusters from a CD-HIT \verb_*_.clstr file that only one sequence with 100\% identity. If it contains multiple sequences with 100\% identity, it will choose the longes sequence possible. As an output, it creates a \verb_*_.clstr format. 
 \cite{grabsingletonclusters}
-This program is used in the Sondovac, part b. 
+This program is used in the Sondovač, part b. 
 
 \item Samtools
 
@@ -367,7 +378,7 @@ Samtools is a collection of programs for manipulating with high-throughput seque
 \end{enumerate}
 \cite{samtools}
 
-In Sondovac script, SAMtools is used in part a to convert SAM files to BAM files. 
+In Sondovač script, SAMtools is used in part a to convert SAM files to BAM files. 
 
 %htsjdk
 %I am pretty sure they just hit random keys and then came up with a clever meaning for this one. 
@@ -386,8 +397,8 @@ In Sondovac script, SAMtools is used in part a to convert SAM files to BAM files
 
 \end{enumerate}
 
-\section{Use of Sondovac}
-Here we will write about how to use Sondovac, what modes does it run and what flags or settings can be used.
+\section{Use of Sondovač}
+Here we will write about how to use Sondovač, what modes it runs and what flags or settings can be used.
 
 DO I EVEN WANT THIS PART HERE? 
 %\subsection{Installation}
