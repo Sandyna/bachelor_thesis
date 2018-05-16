@@ -1,6 +1,7 @@
-target_enrichement_probes_file_name = "output_target_enrichment_probe_sequences.fasta"
-sequences_to_remove_file_name = "remove_genes_names.txt";
-sequences_to_keep_file_name = "keep_genes_names.txt";
+target_enrichement_probes_file_name = "output_target_enrichment_probes_mixed_alyssum_odontarrhena.fasta"
+#both should contain '>
+sequences_to_remove_file_name = "probe_names_to_remove.fasta";
+sequences_to_keep_file_name = "probe_names_to_keep.fasta";
 new_file_name = "selected_" + target_enrichement_probes_file_name
 target_number_of_bases = 1000000
 switch_to_knapsack_after = 990000
@@ -41,7 +42,7 @@ target_enrichement_probes_file = open(target_enrichement_probes_file_name, "r")
 for line in target_enrichement_probes_file:
 #	If it is the line with the name and if it does not contain the sequence we want to remove
 	if line[0] == '>' and not(line in sequences_to_remove.keys()):
-#		Putting the sequence into the output
+#		Putting the sequence into the output if we want to keep it
 		if line in sequences_to_keep.keys():
 			name = line
 			sequence = next(target_enrichement_probes_file)
@@ -60,6 +61,7 @@ target_enrichement_probes_file.close()
 
 #Sorting sequences by length
 length_name.sort(reverse=True)
+
 
 i = 0
 #Greedy part
