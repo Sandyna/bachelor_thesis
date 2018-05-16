@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2018.5.12)  14 MAY 2018 21:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2018.5.12)  16 MAY 2018 20:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -644,7 +644,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 83.
  [2]
-<images/assignment_sandalova.pdf, id=205, 597.23125pt x 845.1575pt>
+<images/assignment_sandalova.pdf, id=213, 597.23125pt x 845.1575pt>
 File: images/assignment_sandalova.pdf Graphic file (type pdf)
 <use images/assignment_sandalova.pdf>
 Package pdftex.def Info: images/assignment_sandalova.pdf  used on input line 11
@@ -656,7 +656,7 @@ Overfull \hbox (4.82378pt too wide) in paragraph at lines 111--112
  []
 
 [3 <./images/assignment_sandalova.pdf>]
-<images/zadanie_sandalova.pdf, id=235, 597.23125pt x 845.1575pt>
+<images/zadanie_sandalova.pdf, id=243, 597.23125pt x 845.1575pt>
 File: images/zadanie_sandalova.pdf Graphic file (type pdf)
 <use images/zadanie_sandalova.pdf>
 Package pdftex.def Info: images/zadanie_sandalova.pdf  used on input line 115.
@@ -670,14 +670,14 @@ Overfull \hbox (4.82378pt too wide) in paragraph at lines 115--116
  same identifier (name{page.iii}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.136 \newpage
+l.141 \newpage
                [3
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.152 \newpage
+l.157 \newpage
                [4] [5] (./main.toc [6
 
 ])
@@ -756,12 +756,12 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                removing `\textasciicaron' on input line 130.
 
 [10]
-<graphs/sondovac_overview.pdf, id=470, 809.0225pt x 994.71625pt>
+<graphs/sondovac_overview.pdf, id=498, 809.0225pt x 994.71625pt>
 File: graphs/sondovac_overview.pdf Graphic file (type pdf)
 <use graphs/sondovac_overview.pdf>
 Package pdftex.def Info: graphs/sondovac_overview.pdf  used on input line 165.
 (pdftex.def)             Requested size: 441.01773pt x 542.2538pt.
-<graphs/sondovac_overview_part_b.pdf, id=471, 915.42pt x 793.96625pt>
+<graphs/sondovac_overview_part_b.pdf, id=499, 915.42pt x 793.96625pt>
 File: graphs/sondovac_overview_part_b.pdf Graphic file (type pdf)
 <use graphs/sondovac_overview_part_b.pdf>
 Package pdftex.def Info: graphs/sondovac_overview_part_b.pdf  used on input lin
@@ -796,13 +796,13 @@ Overfull \hbox (108.62154pt too wide) in paragraph at lines 52--54
  []
 
 [20]
-<graphs/selecting_probes.pdf, id=591, 939.51pt x 502.87875pt>
+<graphs/selecting_probes.pdf, id=617, 939.51pt x 502.87875pt>
 File: graphs/selecting_probes.pdf Graphic file (type pdf)
 <use graphs/selecting_probes.pdf>
 Package pdftex.def Info: graphs/selecting_probes.pdf  used on input line 93.
 (pdftex.def)             Requested size: 441.01773pt x 236.05379pt.
  [21 <./graphs/selecting_probes.pdf>]
-<graphs/probe_picker_workflow.pdf, id=604, 865.2325pt x 786.94pt>
+<graphs/probe_picker_workflow.pdf, id=630, 865.2325pt x 786.94pt>
 File: graphs/probe_picker_workflow.pdf Graphic file (type pdf)
 <use graphs/probe_picker_workflow.pdf>
 Package pdftex.def Info: graphs/probe_picker_workflow.pdf  used on input line 1
@@ -817,22 +817,60 @@ Overfull \hbox (8.95824pt too wide) in paragraph at lines 149--149
 [22] [23 <./graphs/probe_picker_workflow.pdf>] [24] [25]) (./results.tex
 [26]
 Kapitola 5.
-) (./improvements.tex [27
+[27
 
 ]
-Kapitola 6.
+<images/gmelinii_metal.png, id=668, 607.26875pt x 341.275pt>
+File: images/gmelinii_metal.png Graphic file (type png)
+<use images/gmelinii_metal.png>
+Package pdftex.def Info: images/gmelinii_metal.png  used on input line 48.
+(pdftex.def)             Requested size: 308.71106pt x 173.49074pt.
+<images/gmelinii_nickel.png, id=670, 607.26875pt x 341.275pt>
+File: images/gmelinii_nickel.png Graphic file (type png)
+<use images/gmelinii_nickel.png>
+Package pdftex.def Info: images/gmelinii_nickel.png  used on input line 56.
+(pdftex.def)             Requested size: 308.71106pt x 173.49074pt.
+<images/odontarrhena_metal.png, id=671, 607.26875pt x 341.275pt>
+File: images/odontarrhena_metal.png Graphic file (type png)
+<use images/odontarrhena_metal.png>
+Package pdftex.def Info: images/odontarrhena_metal.png  used on input line 64.
+(pdftex.def)             Requested size: 308.71106pt x 173.49074pt.
+<images/odontarrhena_nickel.png, id=672, 607.26875pt x 341.275pt>
+File: images/odontarrhena_nickel.png Graphic file (type png)
+<use images/odontarrhena_nickel.png>
+Package pdftex.def Info: images/odontarrhena_nickel.png  used on input line 72.
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 6.
+(pdftex.def)             Requested size: 308.71106pt x 173.49074pt.
+<images/gmelinii_metal_sim.png, id=673, 607.26875pt x 341.275pt>
+File: images/gmelinii_metal_sim.png Graphic file (type png)
+<use images/gmelinii_metal_sim.png>
+Package pdftex.def Info: images/gmelinii_metal_sim.png  used on input line 83.
+(pdftex.def)             Requested size: 308.71106pt x 173.49074pt.
+<images/gmelinii_nickel_sim.png, id=674, 607.26875pt x 341.275pt>
+File: images/gmelinii_nickel_sim.png Graphic file (type png)
+<use images/gmelinii_nickel_sim.png>
+Package pdftex.def Info: images/gmelinii_nickel_sim.png  used on input line 91.
 
+(pdftex.def)             Requested size: 308.71106pt x 173.49074pt.
+<images/odontarrhena_metal_sim.png, id=675, 607.26875pt x 341.275pt>
+File: images/odontarrhena_metal_sim.png Graphic file (type png)
+<use images/odontarrhena_metal_sim.png>
+Package pdftex.def Info: images/odontarrhena_metal_sim.png  used on input line 
+99.
+(pdftex.def)             Requested size: 308.71106pt x 173.49074pt.
+<images/odontarrhena_nickel_sim.png, id=676, 607.26875pt x 341.275pt>
+File: images/odontarrhena_nickel_sim.png Graphic file (type png)
+<use images/odontarrhena_nickel_sim.png>
+Package pdftex.def Info: images/odontarrhena_nickel_sim.png  used on input line
+ 107.
+(pdftex.def)             Requested size: 308.71106pt x 173.49074pt.
+ [28 <./images/gmelinii_metal.png>] [29 <./images/gmelinii_nickel.png> <./image
+s/odontarrhena_metal.png>] [30 <./images/odontarrhena_nickel.png> <./images/gme
+linii_metal_sim.png>] [31 <./images/gmelinii_nickel_sim.png> <./images/odontarr
+hena_metal_sim.png>]) (./zaver.tex [32 <./images/odontarrhena_nickel_sim.png>] 
+[33
 
-Package hyperref Warning: Composite letter `\textasciicaron+c'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 15.
-
-) [28
-
-] (./main.bbl
+]) [34] (./main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 18--21
 []\T1/cmr/m/n/12 grab_singleton_clusters.py.  []$\T1/cmtt/m/n/12 https : / / gi
 thub . com / listonlab / Hyb-[]Seq _
@@ -844,30 +882,30 @@ Underfull \hbox (badness 1360) in paragraph at lines 55--58
  . sourceforge . net / bowtie2 / index .
  []
 
-[29
+[35
 
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 275.
- [30]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 275.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 285.
+ [36]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 285.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 275.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 275.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 285.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 285.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7B89D4C164CE1C160AFABB8DD0114F61;3278.
+(rerunfilecheck)             Checksum: 35472A7BBEE1341010B2782D9A1EF1E2;3358.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 275.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 285.
  ) 
 Here is how much of TeX's memory you used:
- 7008 strings out of 492982
- 98648 string characters out of 6138579
- 197156 words of memory out of 5000000
- 10281 multiletter control sequences out of 15000+600000
+ 7076 strings out of 492982
+ 100236 string characters out of 6138579
+ 198863 words of memory out of 5000000
+ 10323 multiletter control sequences out of 15000+600000
  16396 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,6n,31p,621b,587s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -885,10 +923,10 @@ ist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1
 /public/cm-super/sfsl1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
 r/sfti1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
 
-Output written on main.pdf (41 pages, 519813 bytes).
+Output written on main.pdf (47 pages, 664020 bytes).
 PDF statistics:
- 764 PDF objects out of 1000 (max. 8388607)
- 666 compressed objects within 7 object streams
- 182 named destinations out of 1000 (max. 500000)
- 407 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 837 PDF objects out of 1000 (max. 8388607)
+ 716 compressed objects within 8 object streams
+ 199 named destinations out of 1000 (max. 500000)
+ 463 words of extra memory for PDF output out of 10000 (max. 10000000)
 

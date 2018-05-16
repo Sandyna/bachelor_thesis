@@ -41,7 +41,9 @@
 \BOOKMARK [2][-]{subsection.4.5.2}{Picking the genes to keep and remove}{section.4.5}% 41
 \BOOKMARK [0][-]{chapter.5}{Results}{}% 42
 \BOOKMARK [1][-]{section.5.1}{Partial results}{chapter.5}% 43
-\BOOKMARK [1][-]{section.5.2}{Final probes}{chapter.5}% 44
-\BOOKMARK [0][-]{chapter.6}{Possible Improvements}{}% 45
-\BOOKMARK [1][-]{subsection.6.0.1}{Full automatization}{chapter.6}% 46
-\BOOKMARK [2][-]{subsection.6.0.2}{Incorporating the script we coded into the Sondovac pipeline}{subsection.6.0.1}% 47
+\BOOKMARK [2][-]{subsection.5.1.1}{Initial probes}{section.5.1}% 44
+\BOOKMARK [2][-]{subsection.5.1.2}{Alignment}{section.5.1}% 45
+\BOOKMARK [2][-]{subsection.5.1.3}{Probes to keep and remove}{section.5.1}% 46
+\BOOKMARK [1][-]{section.5.2}{Final probes}{chapter.5}% 47
+\BOOKMARK [2][-]{subsection.5.2.1}{Degenerated bases}{section.5.2}% 48
+\BOOKMARK [0][-]{chapter*.10}{Z\341ver}{}% 49

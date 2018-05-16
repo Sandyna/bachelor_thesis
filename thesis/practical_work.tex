@@ -159,18 +159,19 @@ zero.
 %How does this apply to our problem
 The Probe Picker presents us with a problem, where we have $n$ integers to choose from and a limit $l$ that we mustn't overstep. This is a variation of the subset sum problem, 
 where length of a sequence, or rather, the number of bases it consists of, can be considered an integer in the initial multiset. As a result, we want a list of sequences that make the 
-most of the possible space; we want to fill the "knapsack" as precisely as possible without overstepping the limit. 
+most of the possible space; we want to fill the ``knapsack'' as precisely as possible without overstepping the limit. 
 %Definition of informatic problem
 
 The original version of the subset sum is NP complete, which means that we can easily (in polynomial time) confirm, that the solution is valid, but it may be difficult to determine whether a 
 solutions exists at all. 
 
-The problem we have is an optiomalisation variation of the subset sum problem. Since subset sum problem is NP complete, the problem we have is NP hard. This means... 
+The problem we have is an optiomalisation variation of the subset sum problem. Since subset sum problem is NP complete, the problem we have is NP hard. This means that any NP complete problem can be 
+reduced to our problem. 
 
 %Theory, solution, and stuff. Why we can make it quick by dynamic programming
 However, there is a quicker pseudopolynomial solution for our problem. We can go with an approach that uses dynamic programming. 
 Dynamic programming is about breaking a complex problem into simpler subproblems and solving each of the subproblems only once. From these partial results we can build the final answer. 
-Our problem is finding a subset of sequences whose sum of lengths is the closest possible number to $1,000,000$ and as an input, we have a number of bases (remainging bases we didn't fill up by the greedy 
+Our problem is finding a subset of sequences whose sum of lengths is the closest possible number to $1,000,000$ and as an input, we have a number of bases (remaining bases we didn't fill up by the greedy 
 approach) we need to fill with probes and a list of probes and their lengths. 
 The definition of a subproblem we are facing goes as follows: 
 For a given sum $s$ and the first $k$ sequences, can the sum be achieved by adding up a subset of these sequences's lengths? 
@@ -179,13 +180,26 @@ We can solve this subproblem by using a result from another subproblem that we h
 Let's say we are looking at a specific sequence $k$ with length $l$ and a specific sum $s$. We want to decide whether we might want the sequence $k$ in our result or not. 
 
 %vezmem/nevezmem
-If we want it, then how can we achieve 
+If we want the sequence, then how can we achieve 
 the sum $s$ while also using the sequence $k$? We will take a look at another sum, let's call it $s_{previous}$. This sum $s_{previous}$ is equal to $s - l$. Since lengths of sequences are positive integers, $s_{previous}$ will be 
-smaller than $s$ and therefore already solved (or we can recursively go take a look at the $s_{previous}$ and solve the subproblem for this sum and a sequence $k-1$. 
+smaller than $s$ and therefore already solved (or we can recursively go take a look at the $s_{previous}$ and solve the subproblem for this sum and a sequence $k-1$. ). 
 
 In the case we don't want the sequence, we will exclude the sequence $k$ and try to solve the subproblem for the same sum $s$ and a sequence $k-1$. 
+How do we decide if we want the sequence or not? Any of the options is fine, as long as it provides a solution. We just take a look at where the solution came from. 
 
-I WILL ADD MORE LATER. 
+For the case when $k = 0$, there are no sequences and therefore only $s = 0$ has a solution. 
+We create a table with $k$ as one coordinate and $s$ as the other, which we fill in with the results of our subproblems. For each cell of this table, we want to rememer whether 
+we can achieve the sum $s$ while using a subset of first $k$ sequences, and the coordinates of the previous cell - the one we based our solution on. 
+We can simply put values of $-1$ into each cell and change any cell that has a possible result into the coordinates of the previous cell. Therefore, any cell that doesn't have 
+a $-1$ in it has a solution. 
+
+\subsubsection{Getting the result}
+After we fill all of the table, we want to track back the subset of sequences we used. It is possible, that we have not met the exact value we were looking for. Therefore, we will 
+use a for loop to find the best possible solution. We will look at the rows(or columns) with sums and look for a value different from $-1$. Since we are going from the other end, the first such 
+value we find indicates the largest sum that can be achieved. 
+In this cell, we will simply note the corresponding $k$ and whether we took the sequence into our result. Then we will look at the previous cell, whose coordinates we have saved in the 
+current one. When we get to the start, we should already have the final list of sequences. 
+
 
 \subsection{Picking the genes to keep and remove}
 
