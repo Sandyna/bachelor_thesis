@@ -1,9 +1,9 @@
 import random
 
 metal_keep_genes_file_name = "metal_probes_mix.fasta"
-aligned_probes_file_name = "arabidopsis_gmelinii_aligned.fa"
-remove_genes_file_name = "probe_names_to_keep.fasta"
-keep_genes_file_name = "probe_names_to_remove.fasta"
+aligned_probes_file_name = "./aligned_sequences/odontarrhena_gmelinii_aligned.fa"
+remove_genes_file_name = "probe_names_to_remove.fasta"
+keep_genes_file_name = "probe_names_to_keep.fasta"
 
 
 #all names should have > at the beginning
